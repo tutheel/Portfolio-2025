@@ -47,7 +47,7 @@ const currentDate = () => {
 function Hero() {
   const { day, month, year } = currentDate();
   return (
-    <div className="w-screen h-screen bg-[#19171b]">
+    <div className="w-full h-screen bg-[#19171b] scrollbar-none">
       <div className="w-full h-[60svh] bg-radial-[at_50%_100%] from-[#fff200] via-[#ff7300] to-[#c402ce] to-90% flex items-end justify-end overflow-hidden uppercase pr-2">
         <div
           className={`text-7xl tracking-tighter font-bold text-right ${oswald.className}`}
