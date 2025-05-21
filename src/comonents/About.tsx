@@ -30,7 +30,7 @@ const textThree: string =
 
 function About() {
   return (
-    <div className="w-full h-screen bg-[#19171b] overflow-hidden scrollbar-none">
+    <div className="w-full h-screen bg-[#19171b] overflow-hidden">
       <div className="w-full h-full bg-radial-[at_50%_100%] from-[#fff200] via-[#ff7300] to-[#c402ce]  to-110% relative">
         <div className="flex flex-col items-center justify-end-safe relative z-10">
           <div

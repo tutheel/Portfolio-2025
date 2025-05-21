@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 function NavBar() {
   return (
-    <div className="w-full h-[5svh] pl-2 pr-2 invert flex flex-row items-center justify-between upppercase scrollbar-none">
+    <div className="w-full h-[5svh] pl-2 pr-2 invert flex flex-row items-center justify-between upppercase">
       <div
         className={`w-1/2 text-2xl font-bold  ${oswald.className} upppercase tracking-tight`}
       >
@@ -31,6 +31,9 @@ function NavBar() {
         </a>
         <a href="#skills" className="text-xl font-medium tracking-normal uppercase">
           Skills
+        </a>
+        <a href="#experiance" className="text-xl font-medium tracking-normal uppercase">
+          Experience
         </a>
         <a href="#projects" className="text-xl font-medium tracking-normal uppercase">
           Projects

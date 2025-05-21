@@ -1,6 +1,6 @@
 import Content from "@/comonents/Content";
 import Loader from "@/comonents/Loader";
-// import Skills from "@/comonents/Skills";
+import Skills from "@/comonents/Skills";
 import { useState } from "react";
 
 
