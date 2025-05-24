@@ -30,44 +30,42 @@ const textThree: string =
 
 function About() {
   return (
-    <div className="w-full h-screen bg-[#19171b] overflow-hidden">
-      <div className="w-full h-full bg-radial-[at_50%_100%] from-[#fff200] via-[#ff7300] to-[#c402ce]  to-110% relative">
-        <div className="flex flex-col items-center justify-end-safe relative z-10">
+    <div className="w-full h-[130svh] bg-white overflow-hidden">
+      <div className="h-[65svh] flex flex-col items-center justify-end-safe relative z-10">
+        <div
+          className={`${oswald.className} text-[25vw] bg-linear-180 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% bg-clip-text text-transparent tracking-tighter uppercase z-10 mt-5`}
+        >
+          ABOUT ME
+        </div>
+        <div className="w-[40vw] h-[40svh] absolute z-20 ">
+          <img src="/Sushil.png" alt="" />
+        </div>
+      </div>
+      <div className="w-full h-[65svh] absolute z-30 flex items-start justify-between px-15">
+        <div
+          className={`flex flex-col items-start justify-center gap-2 space-y-4`}
+        >
           <div
-            className={`${sixCaps.className} text-white text-[30vw] tracking tracking-tight uppercase z-10 -m-30`}
+            className={` w-[30vw] ${oswald.className} bg-linear-180 from-[#ff7300] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% bg-clip-text text-transparent font-medium tracking-tight text-5xl mt-14`}
           >
-            ABOUT ME
+            I am Sushil Patil
           </div>
-          <div className="w-[35vw] h-[35svh] absolute z-20 m-35">
-            <img src="/Sushil.png" alt="" />
+          <div
+            className={`w-[23vw] ${poppins.className} text-[#19171b] text-justify font-semibold text-md`}
+          >
+            {textOne}
           </div>
         </div>
-        <div className="w-full h-[5svh] absolute z-30 flex items-end-safe justify-between pr-15 pl-15 pb-4">
+        <div className="flex flex-col items-start justify-center gap-5 space-y-4 mt-[4%] text-justify">
           <div
-            className={`flex flex-col items-start justify-center gap-2 space-y-4`}
+            className={` w-[23vw]  ${poppins.className} text-[#19171b] font-semibold text-md `}
           >
-            <div
-              className={` w-[30vw] ${oswald.className} text-white font-medium tracking-tight text-5xl mt-14`}
-            >
-              I am Sushil Patil
-            </div>
-            <div
-              className={`w-[23vw] ${poppins.className} text-[#19171b] text-left font-semibold text-md`}
-            >
-              {textOne}
-            </div>
+            {textTwo}
           </div>
-          <div className="flex flex-col items-start justify-center gap-5 space-y-4 mt-[4%] text-left">
-            <div
-              className={` w-[23vw]  ${poppins.className} text-[#19171b] font-semibold text-md `}
-            >
-              {textTwo}
-            </div>
-            <div
-              className={` w-[23vw]  ${poppins.className} text-[#19171b] font-semibold text-md `}
-            >
-              {textThree}
-            </div>
+          <div
+            className={` w-[23vw]  ${poppins.className} text-[#19171b] font-semibold text-md `}
+          >
+            {textThree}
           </div>
         </div>
       </div>

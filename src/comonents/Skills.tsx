@@ -100,92 +100,29 @@ const designTools = [
 
 function Skills() {
   return (
-    <div className="w-full h-screen bg-[#19171b] flex flex-col items-center justify-center select-none">
+    <div className="w-full h-[120svh] bg-[#19171b] flex flex-col gap-10 items-center justify-center select-none">
       {/* Hover text */}
-      <div className="w-full h-[45%] flex flex-col justify-end">
+      <div className="w-full h-[45svh] flex flex-col justify-end">
         <div
-          className={`w-full ${oswald.className} tracking-tight font-semibold uppercase flex flex-col items-center text-[16vw] leading-none`}
+          className={`w-full ${oswald.className} tracking-tight font-semibold uppercase flex flex-col items-center text-[12vw] leading-none bg-linear-180 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-70% bg-clip-text text-transparent`}
         >
           Developer
         </div>
       </div>
 
       {/* Skill Block */}
-      <div className="w-full h-[50%] flex flex-row items-center justify-evenly">
-        {/* Designer */}
-        <div className="w-1/3 h-full bg-white flex flex-row items-center justify-center">
-          <div className="w-[20%] h-full text-black flex flex-row items-center justify-center">
-            <div className="rotate-270 flex flex-row items-center justify-center gap-2 -mb-18 mr-5">
-              <div className="text-6xl">Designer</div>
-              <div className="w-10 h-10 mt-3 bg-[#ff7300] rounded-full" />
-            </div>
-          </div>
-          <div className="w-[80%] h-full text-right text-black pr-5 pt-5">
-            <div
-              className={`flex flex-col text-right text-md gap-5 font-light ${poppins.className}`}
-            >
-              <div>
-                <p className="font-semibold">UI/UX Design & Interaction</p>
-                {uiuxInter.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
-                  >
-                    {skill}
-                    {index < uiuxInter.length - 1 && <span>, </span>}
-                  </span>
-                ))}
-              </div>
-              <div>
-                <p className="font-semibold">Visual Design & Aesthetics</p>
-                {visualDesig.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
-                  >
-                    {skill}
-                    {index < visualDesig.length - 1 && <span>, </span>}
-                  </span>
-                ))}
-              </div>
-              <div>
-                <p className="font-semibold">UX Research & Strategy</p>
-                {uxResStrat.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
-                  >
-                    {skill}
-                    {index < uxResStrat.length - 1 && <span>, </span>}
-                  </span>
-                ))}
-              </div>
-              <div>
-                <p className="font-semibold">Design Tools</p>
-                {designTools.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
-                  >
-                    {skill}
-                    {index < designTools.length - 1 && <span>, </span>}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="w-full h-[55svh] flex flex-row items-center justify-evenly gap-5 px-10">
         {/* Developer */}
-        <div className="w-1/3 h-full bg-[#232323] flex flex-row items-center justify-center">
+        <div className="w-1/2 h-full bg-black flex flex-row items-center justify-center rounded-xl">
           <div className="w-[20%] h-full text-white  flex flex-row items-center justify-center">
             <div className="rotate-270 flex flex-row items-center justify-center gap-2 -mb-8 mr-5">
               <div className="text-6xl">Developer</div>
-              <div className="w-10 h-10 mt-3 bg-[#ff7300] rounded-full" />
+              <div className="w-10 h-10 mt-3 bg-linear-270 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% rounded-full" />
             </div>
           </div>
-          <div className="w-[80%] h-full text-right text-white pr-5 pt-5">
+          <div className="w-[80%] h-full text-right flex flex-col justify-start pt-5 text-white pr-5">
             <div
-              className={`flex flex-col text-right text-md gap-5 font-light ${poppins.className}`}
+              className={`flex flex-col text-right text-sm gap-5 font-light ${poppins.className}`}
             >
               <div>
                 <p className="font-semibold">Languages</p>
@@ -250,8 +187,72 @@ function Skills() {
             </div>
           </div>
         </div>
+        {/* Designer */}
+        <div className="w-1/2 h-full bg-white flex flex-row items-center justify-center rounded-xl">
+          <div className="w-[20%] h-full text-black flex flex-row items-center justify-center">
+            <div className="rotate-270 flex flex-row items-center justify-center gap-2 -mb-18 mr-5">
+              <div className="text-6xl">Designer</div>
+              <div className="w-10 h-10 mt-3 bg-linear-270 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% rounded-full" />
+            </div>
+          </div>
+          <div className="w-[80%] h-full text-right flex flex-col justify-start pt-5 text-black pr-5">
+            <div
+              className={`flex flex-col text-right text-sm gap-5 font-light ${poppins.className}`}
+            >
+              <div>
+                <p className="font-semibold">UI/UX Design & Interaction</p>
+                {uiuxInter.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
+                  >
+                    {skill}
+                    {index < uiuxInter.length - 1 && <span>, </span>}
+                  </span>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold">Visual Design & Aesthetics</p>
+                {visualDesig.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
+                  >
+                    {skill}
+                    {index < visualDesig.length - 1 && <span>, </span>}
+                  </span>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold">UX Research & Strategy</p>
+                {uxResStrat.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
+                  >
+                    {skill}
+                    {index < uxResStrat.length - 1 && <span>, </span>}
+                  </span>
+                ))}
+              </div>
+              <div>
+                <p className="font-semibold">Design Tools</p>
+                {designTools.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="hover:text-[#ff7300] transition duration-200 ease-in-out"
+                  >
+                    {skill}
+                    {index < designTools.length - 1 && <span>, </span>}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* Art */}
-        <div className="w-1/3 h-full bg-black flex flex-row items-center justify-center">
+        {/* <div className="w-1/3 h-full bg-[#232323] flex flex-row items-center justify-center">
           <div className="w-[20%] h-full text-white  flex flex-row items-center justify-center">
             <div className="rotate-270 flex flex-row items-center justify-center gap-2 -mb-52 mr-5">
               <div className="text-6xl">Art</div>
@@ -302,13 +303,13 @@ function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="w-full h-[5%] flex flex-row items-center justify-center">
+      {/* <div className="w-full h-[5%] flex flex-row items-center justify-center">
         <p className={`${poppins.className}`}>
           Skills page is still under development
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

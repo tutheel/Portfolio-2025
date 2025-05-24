@@ -32,8 +32,8 @@ function NavBar() {
         <a href="#skills" className="text-xl font-medium tracking-normal uppercase">
           Skills
         </a>
-        <a href="#experiance" className="text-xl font-medium tracking-normal uppercase">
-          Experience
+        <a href="#services" className="text-xl font-medium tracking-normal uppercase">
+          Services
         </a>
         <a href="#projects" className="text-xl font-medium tracking-normal uppercase">
           Projects
