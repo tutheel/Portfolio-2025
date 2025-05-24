@@ -1,13 +1,18 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import NavBar from "./NavBar";
 import Hero from "./Hero";
 import About from "./About";
 import Skills from "./Skills";
 import Lenis from "lenis";
 import Services from "./Services";
+import { gsap, CSSPlugin } from "gsap";
+gsap.registerPlugin(CSSPlugin);
 
 function Content() {
+  const navBarRef = useRef(null);
+  const homePageRef = useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -27,19 +32,39 @@ function Content() {
     };
   }, []);
 
+  useEffect(() => {
+    reveal();
+  }, []);
+
+  const reveal = () => {
+    const t1 = gsap.timeline({
+      onComplete: () => {
+        console.log("Completed!");
+      },
+    });
+
+    t1.to(homePageRef.current, {
+      ease: "Power3.easeInOut",
+    }).to(navBarRef.current, {
+      opacity: "100%",
+      delay: 0.5,
+      duration: 1.5,
+      ease: "Power3.easeInOut",
+    })
+  };
   return (
     <div className="relative scrollbar-none">
       {/* Navbar on top */}
-      <div className="fixed invert top-0 left-0 w-full z-50">
+      <div ref={navBarRef} className="fixed invert top-0 left-0 w-full z-50 opacity-0">
         <NavBar />
       </div>
 
       {/* Hero behind Navbar */}
-      <div className="relative z-10">
+      <div ref={homePageRef} className="relative z-10">
         <Hero />
         <About />
         <Skills />
-        <Services/>
+        <Services />
       </div>
     </div>
   );
