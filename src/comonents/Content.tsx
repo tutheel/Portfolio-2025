@@ -55,9 +55,9 @@ function Content() {
   return (
     <div className="relative scrollbar-none">
       {/* Navbar on top */}
-      <div ref={navBarRef} className="fixed invert top-0 left-0 w-full z-50 opacity-0">
+      {/* <div ref={navBarRef} className="fixed invert top-0 left-0 w-full z-50 opacity-0">
         <NavBar />
-      </div>
+      </div> */}
 
       {/* Hero behind Navbar */}
       <div ref={homePageRef} className="relative z-10">

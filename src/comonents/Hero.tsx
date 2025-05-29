@@ -1,7 +1,13 @@
-import { Oswald, Poppins } from "next/font/google";
-import { useEffect, useRef } from "react";
+import { Oswald, Poppins, Montserrat } from "next/font/google";
+// import { useEffect, useRef } from "react";
 import { gsap, CSSPlugin } from "gsap";
+import { useEffect, useRef, useState } from "react";
 gsap.registerPlugin(CSSPlugin);
+
+const montserrat = Montserrat({
+  weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 const oswald = Oswald({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -22,146 +28,208 @@ const currentDate = () => {
   return { day, month, year };
 };
 
-const content = {
-  heroWords: ["Code", "Cloud", "Creativity"],
-};
+const menuItems = [
+  "About",
+  "Skills",
+  "Services",
+  "Work",
+  "Experience",
+  "Contact",
+];
+
+const textOne =
+  "I believe technology should be smart, seamless, and stylish. I make sure it’s all three.";
+const texttwo = "I’m Designer & Creative Developer from Karnataka, India.";
 
 function Hero() {
   const { day, month, year } = currentDate();
-  const heroTopSectionRef = useRef(null);
-  const gredSectionRef = useRef(null);
-  const heroSectionRef = useRef(null);
-  const scrollSectionRef = useRef(null);
-  const heroTextOneRef = useRef(null);
-  const heroTextTwoRef = useRef(null);
-  const heroTextThreeRef = useRef(null);
-  const tagLineRef = useRef(null);
+  // const heroTopSectionRef = useRef(null);
+  // const gredSectionRef = useRef(null);
+  // const heroSectionRef = useRef(null);
+  // const scrollSectionRef = useRef(null);
+  // const heroTextOneRef = useRef(null);
+  // const heroTextTwoRef = useRef(null);
+  // const heroTextThreeRef = useRef(null);
+  // const tagLineRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    reveal();
-  }, []);
-
-  const reveal = () => {
-    const t1 = gsap.timeline({
-      onComplete: () => {
-        console.log("Completed!");
-      },
-    });
-
-    t1.to(heroTopSectionRef.current, {
-      opacity: "100%",
-      delay: 0.5,
-      duration: 1.5,
-      ease: "Power3.easeInOut",
-    })
-      .to(gredSectionRef.current, {
-        opacity: "100%",
-        duration: 0.5,
-        ease: "Power3.easeInOut",
-      })
-      .to(heroSectionRef.current, {
-        opacity: "100%",
-        duration: 0.5,
-        ease: "Power3.easeInOut",
-      })
-      .to(scrollSectionRef.current, {
-        opacity: "100%",
-        duration: 0.5,
-        ease: "Power3.easeInOut",
-      })
-      .to(heroTextOneRef.current, {
-        opacity: "100%",
-        y: 0,
-        duration: 0.8,
-        ease: "Power3.easeInOut",
-      })
-      .to(heroTextTwoRef.current, {
-        opacity: "100%",
-        y: 0,
-        duration: 0.8,
-        ease: "Power3.easeInOut",
-      })
-      .to(heroTextThreeRef.current, {
-        opacity: "100%",
-        y: 0,
-        duration: 0.8,
-        ease: "Power3.easeInOut",
-      })
-      .to(tagLineRef.current, {
-        opacity: "100%",
-        y: 0,
-        duration: 0.8,
-        ease: "Power3.easeInOut",
+    if (isOpen) {
+      gsap.fromTo(
+        menuRef.current,
+        { height: 0, opacity: 0 },
+        {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        }
+      );
+    } else {
+      gsap.to(menuRef.current, {
+        height: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
       });
-  };
+    }
+  }, [isOpen]);
+  // useEffect(() => {
+  //   reveal();
+  // }, []);
+
+  // const reveal = () => {
+  //   const t1 = gsap.timeline({
+  //     onComplete: () => {
+  //       console.log("Completed!");
+  //     },
+  //   });
+
+  //   t1.to(heroTopSectionRef.current, {
+  //     opacity: "100%",
+  //     delay: 0.5,
+  //     duration: 1.5,
+  //     ease: "Power3.easeInOut",
+  //   })
+  //     .to(gredSectionRef.current, {
+  //       opacity: "100%",
+  //       duration: 0.5,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(heroSectionRef.current, {
+  //       opacity: "100%",
+  //       duration: 0.5,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(heroTextOneRef.current, {
+  //       opacity: "100%",
+  //       y: 0,
+  //       duration: 0.8,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(heroTextTwoRef.current, {
+  //       opacity: "100%",
+  //       y: 0,
+  //       duration: 0.8,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(heroTextThreeRef.current, {
+  //       opacity: "100%",
+  //       y: 0,
+  //       duration: 0.8,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(tagLineRef.current, {
+  //       opacity: "100%",
+  //       y: 0,
+  //       duration: 0.8,
+  //       ease: "Power3.easeInOut",
+  //     })
+  //     .to(scrollSectionRef.current, {
+  //       opacity: "100%",
+  //       duration: 0.5,
+  //       ease: "Power3.easeInOut",
+  //     });
+  // };
 
   return (
-    <section
-      ref={heroTopSectionRef}
-      className="w-full h-[110svh] bg-[#0c0c0c] opacity-0"
-    >
-      {/* Gradient Section */}
-      <div
-        ref={gredSectionRef}
-        className="opacity-0 w-full h-[30svh] bg-radial-[at_50%_100%] from-[#fff200] via-[#ff7300] to-[#c402ce] to-90% flex items-end justify-end overflow-hidden uppercase pr-2"
-      >
-        <div
-          className={`text-7xl tracking-tighter font-bold text-right ${oswald.className}`}
-        >
-          {/* add your Margue here also */}
-          {/* <div className="invert">Artist</div>
-          <div className="invert">Designer</div>
-          <div className="invert">Developer</div> */}
-          {/* <div className="invert">Developer & Designer</div> */}
-        </div>
-      </div>
-      {/* Hero Section */}
-      <div
-        ref={heroSectionRef}
-        className="opacity-0 w-full h-[55svh] flex flex-row items-start-safe justify-between"
-      >
-        <div
-          className={`basis-1/2 text-9xl tracking-tight font-medium ml-2 mt-2 ${poppins.className} text-white`}
-        >
-          <div ref={heroTextOneRef} className="opacity-0 translate-y-10 bg-linear-180 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% bg-clip-text text-transparent">
-            Code
-          </div>
-          <div ref={heroTextTwoRef} className="opacity-0 translate-y-10 bg-linear-180 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% bg-clip-text text-transparent">
-            Cloud
-          </div>
-          <div ref={heroTextThreeRef} className="opacity-0 translate-y-10 bg-linear-180 from-[#fff200] from-10% via-[#ff7300] via-50% to-[#c402ce] to-80% bg-clip-text text-transparent">
-            Creativity
-          </div>
-        </div>
+    // <section className="w-full h-screen flex flex-col">
+    //   {/* Top 30% */}
+    //   <div className="flex-2 basis-[20%] bg-red-500 flex items-center justify-center">
+    //     {/* Left: Logo */}
+    //     <div className="text-lg font-bold">
+    //       MyLogo
+    //     </div>
 
-        <div className="w-1/2 text-md mt-2 mr-5 flex flex-row justify-end-safe">
-          <div ref={tagLineRef} className={`opacity-0 translate-y-10 w-[15vw] text-end text-sm ${poppins.className} `}>
-            I believe technology should be smart, seamless, and stylish. I make
-            sure it&apos;s all three.
+    //     {/* Right: Quotes + Text Menu */}
+    //     <div className="flex flex-row items-end space-y-2 text-sm text-right">
+    //       <span>"Design is intelligence made visible."</span>
+    //       <span>"Creativity is contagious — pass it on."</span>
+    //       <button className="border border-white px-4 py-1 rounded-md hover:bg-white hover:text-red-500 transition font-medium">
+    //         Menu
+    //       </button>
+    //     </div>
+    //   </div>
+
+    //   {/* Middle 60% */}
+    //   <div className="flex-7 basis-[70%] bg-blue-500 flex items-center justify-center">
+    //     <h2 className="text-white text-xl md:text-3xl lg:text-4xl font-semibold">
+    //       Middle 60%
+    //     </h2>
+    //   </div>
+
+    //   {/* Bottom 10% */}
+    //   <div className="flex-1 basis-[10%] bg-green-500 flex items-center justify-center">
+    //     <h2 className="text-white text-xl md:text-2xl font-medium">
+    //       Bottom 10%
+    //     </h2>
+    //   </div>
+    // </section>
+    <section className="w-full min-h-screen flex flex-col bg-[#060606]">
+      <div className="basis-[10%] flex flex-col md:flex-row justify-between items-start px-5 py-2 pt-4 gap-4">
+        <span
+          className={`w-full md:w-1/2 md:h-1/4 ${oswald.className} text-3xl md:text-4xl uppercase`}
+        >
+          <button className="text-transparent  bg-gradient-to-b from-[#ffffff] from-40%  to-[#636060] to-140% bg-clip-text">SUSHIL</button>
+        </span>
+
+        <span className="w-full md:w-1/2 md:h-3/4 flex flex-col md:flex-row md:gap-8 lg:gap-20">
+          <span
+            className={`text-left ${poppins.className} text-sm md:text-md hover:text-[#D8001B] transition duration-200 ease-in-out`}
+          >
+            {textOne}
+          </span>
+          <span
+            className={`text-left ${poppins.className} text-sm md:text-md hover:text-[#D8001B] transition duration-200 ease-in-out`}
+          >
+            {texttwo}
+          </span>
+          <div
+            className={`text-right md:text-left flex flex-col md:flex-col gap-2 md:gap-4 uppercase ${montserrat.className}`}
+          >
+            <div className="normalMenu hidden md:flex flex-col justify-center items-end">
+              {menuItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-white hover:text-[#D8001B] transition"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+
+            <div className="mobileMenu md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle Menu"
+                className="text-white"
+              >
+                {isOpen ? <h1>Menu</h1> : <h1>Menu</h1>}
+              </button>
+            </div>
           </div>
+        </span>
+      </div>
+
+      <div className="flex-8 basis-[80%] relative overflow-hidden bg-radial-[at_50%_-40%] from-[#D8001B] via-[#75020F] to-[#45050e26] from-0% via-55% to-95%">
+        <div
+          className={`${poppins.className} text-transparent bg-gradient-to-b from-[#ffffff] from-50% via-[#ffffff] via-70%  to-[#636060] to-90% bg-clip-text absolute bottom-4 left-4 text-6xl md:text-6xl lg:text-9xl whitespace-nowrap font-semibold`}
+        >
+          Creative Developer - Designer
         </div>
       </div>
-      {/* scroll down section */}
+
       <div
-        ref={scrollSectionRef}
-        className="opacity-0 w-full h-[15svh] border-t-1 border-white flex flex-row justify-between text-white text-sm pr-3 pl-3 pt-2 mt-15"
+        className={`flex-1 basis-[10%] border-t border-white/80 font-light text-xs md:text-sm flex flex-col md:flex-row justify-between items-center px-5 py-1  ${poppins.className}`}
       >
-        <div className={`flex flex-col items-center ${poppins.className} `}>
-          <div className="tracking-tight font-light">
-            &#169; Sushil Patil / 2025
-          </div>
+        <div>
+          {day} {month} {year}
         </div>
-        <div className={`flex flex-col items-center ${poppins.className} `}>
-          <div className="tracking-tight font-light">Scroll Down</div>
-          <div className="-mt-5  text-3xl select-none duration-300 ease-in hover:-mt-1">
-            &#8964;
-          </div>
-        </div>
-        <div className={`flex flex-col items-center ${poppins.className}`}>
-          <div className="tracking-tighter font-light">
-            {day} {month} {year}
-          </div>
-          {/* <div className="tracking-widest font-medium -mt-1.5">{year}</div> */}
+        <div>Scroll Down</div>
+        <div>
+          <a href="">Resume</a>
         </div>
       </div>
     </section>
