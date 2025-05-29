@@ -190,7 +190,8 @@ function Loader({ onFinish }: { onFinish?: () => void }) {
         {/* follow */}
         <div
           ref={followRef}
-          className="h-[4px] bg-radial-[at_100%_50%] from-[#fff200] via-[#ff7300] to-[#c402ce] to-90% absolute left-0 top-1/2 flex justify-center items-center z-40"
+          // className="h-[4px] bg-radial-[at_100%_50%] from-[#fff200] via-[#ff7300] to-[#c402ce] to-90% absolute left-0 top-1/2 flex justify-center items-center z-40"
+           className="h-[4px] bg-[#D8001B] absolute left-0 top-1/2 flex justify-center items-center z-40"
         ></div>
 
         {/* ProgressBar */}

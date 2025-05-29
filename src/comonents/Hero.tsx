@@ -134,44 +134,14 @@ function Hero() {
   // };
 
   return (
-    // <section className="w-full h-screen flex flex-col">
-    //   {/* Top 30% */}
-    //   <div className="flex-2 basis-[20%] bg-red-500 flex items-center justify-center">
-    //     {/* Left: Logo */}
-    //     <div className="text-lg font-bold">
-    //       MyLogo
-    //     </div>
-
-    //     {/* Right: Quotes + Text Menu */}
-    //     <div className="flex flex-row items-end space-y-2 text-sm text-right">
-    //       <span>"Design is intelligence made visible."</span>
-    //       <span>"Creativity is contagious — pass it on."</span>
-    //       <button className="border border-white px-4 py-1 rounded-md hover:bg-white hover:text-red-500 transition font-medium">
-    //         Menu
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   {/* Middle 60% */}
-    //   <div className="flex-7 basis-[70%] bg-blue-500 flex items-center justify-center">
-    //     <h2 className="text-white text-xl md:text-3xl lg:text-4xl font-semibold">
-    //       Middle 60%
-    //     </h2>
-    //   </div>
-
-    //   {/* Bottom 10% */}
-    //   <div className="flex-1 basis-[10%] bg-green-500 flex items-center justify-center">
-    //     <h2 className="text-white text-xl md:text-2xl font-medium">
-    //       Bottom 10%
-    //     </h2>
-    //   </div>
-    // </section>
     <section className="w-full min-h-screen flex flex-col bg-[#060606]">
-      <div className="basis-[10%] flex flex-col md:flex-row justify-between items-start px-5 py-2 pt-4 gap-4">
+      <div className="basis-[15%] flex flex-col md:flex-row justify-between items-start px-5 py-2 pt-4 gap-4">
         <span
           className={`w-full md:w-1/2 md:h-1/4 ${oswald.className} text-3xl md:text-4xl uppercase`}
         >
-          <button className="text-transparent  bg-gradient-to-b from-[#ffffff] from-40%  to-[#636060] to-140% bg-clip-text">SUSHIL</button>
+          <button className="text-transparent bg-gradient-to-b from-[#ffffff] from-40% to-[#636060] to-140% bg-clip-text">
+            SUSHIL
+          </button>
         </span>
 
         <span className="w-full md:w-1/2 md:h-3/4 flex flex-col md:flex-row md:gap-8 lg:gap-20">
@@ -214,21 +184,26 @@ function Hero() {
       </div>
 
       <div className="flex-8 basis-[80%] relative overflow-hidden bg-radial-[at_50%_-40%] from-[#D8001B] via-[#75020F] to-[#45050e26] from-0% via-55% to-95%">
+        <h1
+          className={`${poppins.className} hidden md:hidden lg:flex text-transparent bg-gradient-to-b from-[#ffffff] from-50% to-[#636060] to-110% bg-clip-text absolute lg:bottom-80 text-6xl md:text-6xl lg:text-[10vh] lg:left-1/5 whitespace-nowrap font-semibold`}
+        >
+          Code - Cloud - Creativiy
+        </h1>
         <div
-          className={`${poppins.className} text-transparent bg-gradient-to-b from-[#ffffff] from-50% via-[#ffffff] via-70%  to-[#636060] to-90% bg-clip-text absolute bottom-4 left-4 text-6xl md:text-6xl lg:text-9xl whitespace-nowrap font-semibold`}
+          className={`${poppins.className} text-transparent bg-gradient-to-b from-[#ffffff] from-50% via-[#ffffff] via-70%  to-[#636060] to-90% bg-clip-text absolute bottom-4 left-4 text-6xl md:text-6xl lg:text-[30vh] whitespace-nowrap font-semibold`}
         >
           Creative Developer - Designer
         </div>
       </div>
 
       <div
-        className={`flex-1 basis-[10%] border-t border-white/80 font-light text-xs md:text-sm flex flex-col md:flex-row justify-between items-center px-5 py-1  ${poppins.className}`}
+        className={`basis-[10%] border-t border-white/80 font-light text-xs md:text-sm flex flex-col md:flex-row justify-between items-center px-5 py-5 ${poppins.className}`}
       >
-        <div>
+        <div className="mb-2 mt-5 lg:mt-0">
           {day} {month} {year}
         </div>
-        <div>Scroll Down</div>
-        <div>
+        <div className="mb-2 mt-5 lg:mt-0">Scroll Down</div>
+        <div className="mb-2 mt-5 lg:mt-0">
           <a href="">Resume</a>
         </div>
       </div>
