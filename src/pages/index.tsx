@@ -1,6 +1,8 @@
 "use client";
 import About from "@/comonents/About";
 import Content from "@/comonents/Content";
+import Experience from "@/comonents/Experience";
+import Footer from "@/comonents/Footer";
 import Hero from "@/comonents/Hero";
 import Loader from "@/comonents/Loader";
 import Projects from "@/comonents/Projects";
@@ -16,8 +18,10 @@ export default function Home() {
       {/* {loading ? <Loader onFinish={() => setLoading(false)} /> : <Content />} */}
       {/* <Hero /> */}
       {/* <About/> */}
-      <Skills/>
+      {/* <Skills/> */}
       {/* <Services/> */}
+      {/* <Experience/> */}
+      <Footer/>
     </>
   );
 }
