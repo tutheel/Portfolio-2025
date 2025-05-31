@@ -102,14 +102,14 @@ const Experience = () => {
         </div>
         <div className="my-4 h-[2px] w-full bg-radial from-[#ffffff] from-0%  to-[#19171B] to-100%" />
         <div className=" w-full flex flex-col md:flex-row justify-between items-start ">
-          <span className="w-full md:w-2/6 capitalize">
-            <h1 className={`${poppins.className} text-2xl`}>Gogte instite of technology</h1>
+          <span className="w-full md:w-3/6 capitalize">
+            <h1 className={`${poppins.className} text-2xl`}>Gogte instite of technology, Karnataka</h1>
             <h1 className={`${poppins.className} text-xl`}>
               B.tech - Electronics & Electronics Engineering
             </h1>
           </span>
           <span>
-            <h1 className={`${poppins.className} text-xl italic opacity-60`}>
+            <h1 className={`${poppins.className} w-full text-xl italic opacity-60`}>
               Aug 2018 - July 2022
             </h1>
           </span>

@@ -186,6 +186,7 @@ function Hero() {
       <div className="flex-8 basis-[80%] relative overflow-hidden bg-radial-[at_50%_-40%] from-[#D8001B] via-[#75020F] to-[#45050e26] from-0% via-55% to-95%">
         <h1
           className={`${poppins.className} hidden md:hidden lg:flex text-transparent bg-gradient-to-b from-[#ffffff] from-50% to-[#636060] to-110% bg-clip-text absolute lg:bottom-80 text-6xl md:text-6xl lg:text-[10vh] lg:left-1/5 whitespace-nowrap font-semibold`}
+          // mix-blend-color-dodge you can add here
         >
           Code - Cloud - Creativiy
         </h1>

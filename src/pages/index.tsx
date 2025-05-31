@@ -15,13 +15,13 @@ export default function Home() {
 
   return (
     <>
-      {/* {loading ? <Loader onFinish={() => setLoading(false)} /> : <Content />} */}
+      {loading ? <Loader onFinish={() => setLoading(false)} /> : <Content />}
       {/* <Hero /> */}
       {/* <About/> */}
       {/* <Skills/> */}
       {/* <Services/> */}
       {/* <Experience/> */}
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

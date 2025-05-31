@@ -8,6 +8,7 @@ import Lenis from "lenis";
 import Services from "./Services";
 import { gsap, CSSPlugin } from "gsap";
 import Experience from "./Experience";
+import Footer from "./Footer";
 gsap.registerPlugin(CSSPlugin);
 
 function Content() {
@@ -67,6 +68,7 @@ function Content() {
         <Skills />
         <Services />
         <Experience/>
+        <Footer/>
       </div>
     </div>
   );
