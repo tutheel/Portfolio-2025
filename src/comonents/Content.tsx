@@ -64,11 +64,11 @@ function Content() {
       {/* Hero behind Navbar */}
       <div ref={homePageRef} className="relative z-10">
         <Hero />
-        <About />
+        {/* <About />
         <Skills />
         <Services />
         <Experience/>
-        <Footer/>
+        <Footer/> */}
       </div>
     </div>
   );
