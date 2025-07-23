@@ -9,6 +9,7 @@ import Services from "./Services";
 import { gsap, CSSPlugin } from "gsap";
 import Experience from "./Experience";
 import Footer from "./Footer";
+import Projects from "./Projects";
 gsap.registerPlugin(CSSPlugin);
 
 function Content() {
@@ -65,6 +66,7 @@ function Content() {
       <div ref={homePageRef} className="relative z-10">
         <Hero />
         <About />
+        <Projects/>
         {/* <Skills />
         <Services />
         <Experience/>

@@ -16,8 +16,10 @@ export default function Home() {
   return (
     <>
       {loading ? <Loader onFinish={() => setLoading(false)} /> : <Content />}
-      {/* <Hero />
-      <About/> */}
+
+      {/* <Hero /> */}
+      {/* <About/> */}
+      {/* <Projects/> */}
       {/* <Skills/> */}
       {/* <Services/> */}
       {/* <Experience/> */}
