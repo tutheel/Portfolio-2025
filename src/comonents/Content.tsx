@@ -67,8 +67,8 @@ function Content() {
         <Hero />
         <About />
         <Projects/>
-        {/* <Skills />
-        <Services />
+        <Skills />
+        {/* <Services />
         <Experience/>
         <Footer/> */}
       </div>
