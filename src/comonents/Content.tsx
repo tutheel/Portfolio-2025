@@ -64,8 +64,8 @@ function Content() {
       {/* Hero behind Navbar */}
       <div ref={homePageRef} className="relative z-10">
         <Hero />
-        {/* <About />
-        <Skills />
+        <About />
+        {/* <Skills />
         <Services />
         <Experience/>
         <Footer/> */}

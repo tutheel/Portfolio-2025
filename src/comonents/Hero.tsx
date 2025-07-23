@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 // import { useEffect, useRef } from "react";
 // import { gsap, CSSPlugin } from "gsap";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 // gsap.registerPlugin(CSSPlugin);
 
 const inter = Inter({
@@ -155,16 +155,17 @@ function Hero() {
           {/* Left image: show only right half */}
           <div className="relative w-[400px] h-[800px] overflow-hidden flex-shrink-0">
             <div
-              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_30s_linear_infinite_reverse]"
+              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_50s_linear_infinite_reverse]"
               style={{
-                WebkitMaskImage: `url(/indian.png)`,
+                WebkitMaskImage: "url(../indian.png)",
                 WebkitMaskRepeat: "no-repeat",
                 WebkitMaskSize: "cover",
-                maskImage: `url(/indian.png)`,
+                maskImage: "url(../indian.png)",
                 maskRepeat: "no-repeat",
                 maskSize: "cover",
-                background: "radial-gradient(#F0F0F0, #4C00D8, #060606);",
-                left: "-400px", // half of 800px
+                background:
+                  "radial-gradient(circle at 50% 50%, #F0F0F0E6 0.2%, #4C00D8 40%, #060606 100%)",
+                left: "-400px", // show only right half
                 top: "0",
               }}
             />
@@ -172,16 +173,17 @@ function Hero() {
           {/* Right image: show only left half */}
           <div className="relative w-[400px] h-[800px] overflow-hidden flex-shrink-0">
             <div
-              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_30s_linear_infinite]"
+              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_50s_linear_infinite]"
               style={{
-                WebkitMaskImage: `url(/indian.png)`,
+                WebkitMaskImage: "url(../indian.png)",
                 WebkitMaskRepeat: "no-repeat",
                 WebkitMaskSize: "cover",
-                maskImage: `url(/indian.png)`,
+                maskImage: "url(../indian.png)",
                 maskRepeat: "no-repeat",
                 maskSize: "cover",
-                background: "radial-gradient(#F0F0F0, #4C00D8, #060606);",
-                left: "0",
+                background:
+                  "radial-gradient(circle at 50% 50%, #F0F0F0E6 0.2%, #4C00D8 40%, #060606 100%)",
+                left: "0", // show only left half
                 top: "0",
               }}
             />
