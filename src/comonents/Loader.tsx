@@ -37,7 +37,7 @@ function Loader({ onFinish }: { onFinish?: () => void }) {
     }, 15);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const reveal = () => {
     const t1 = gsap.timeline({
