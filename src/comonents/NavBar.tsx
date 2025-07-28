@@ -1,16 +1,17 @@
+"use client";
 import React from "react";
-import { Oswald, Poppins } from "next/font/google";
+import { Oswald } from "next/font/google";
 
 const oswald = Oswald({
   weight: ["200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-geist-mono",
 });
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+// const poppins = Poppins({
+//   weight: ["200", "300", "400", "500", "600", "700"],
+//   subsets: ["latin"],
+//   variable: "--font-geist-mono",
+// });
 
 function NavBar() {
   return (

@@ -1,122 +1,119 @@
 import React from "react";
-import { Oswald, Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const oswald = Oswald({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  style: ["normal", "italic"],
+const inter = Inter({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+  ],
 });
 
 const Experience = () => {
   return (
-    <section className="bg-[#060606]">
-      <div className="w-full h-30 lg:h-52 flex items-center-safe justify-center translate-y-10">
-        <h1
-          className={`${poppins.className} capitalize text-transparent bg-gradient-to-b from-[#75020F] from-0%  to-[#19171B] to-70% bg-clip-text font-bold text-4xl md:text-4xl lg:text-8xl`}
+    <>
+      <section className="w-full h-[160svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
+        {/* Content */}
+        <div className={` w-full ${inter.className} px-40 pt-60`}>
+          <div className="h-[2px] w-full bg-gradient-to-r from-[#7300FF] to-[#1E0043]"></div>
+          <div className="flex justify-around py-4">
+            <h1 className="w-[25%] font-medium text-2xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+              Accenture
+            </h1>
+            <div className="w-[25%]">
+              <h1 className="font-light text-xl text-[#7300FF]">
+                Software Engineer
+              </h1>
+              <h1 className="font-light text-xl text-[#a4a4a4] italic">
+                Dec 2024 - Present
+              </h1>
+            </div>
+            <h1 className="w-[50%]">
+              <ul className="font-normal list-disc list-outside">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eius, consequatur. Tenetur eos numquam reiciendis. Adipisci
+                  corporis quibusdam minima cumque quis neque! Aliquam
+                  reiciendis placeat sapiente mollitia quod nisi fugiat debitis!
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eius, consequatur. Tenetur eos numquam reiciendis. Adipisci
+                  corporis quibusdam minima cumque quis neque! Aliquam
+                  reiciendis placeat sapiente mollitia quod nisi fugiat debitis!
+                </li>
+                <li className="text-[#a4a4a4] pt-2">
+                  <b>TechStack:</b> Typescript, Node, AWS
+                </li>
+              </ul>
+            </h1>
+          </div>
+          <div className="h-[2px] w-full bg-gradient-to-r from-[#7300FF] to-[#1E0043]"></div>
+          <div className="flex justify-around py-4">
+            <h1 className="w-[25%] font-medium text-2xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+              Accenture
+            </h1>
+            <div className="w-[25%]">
+              <h1 className="font-light text-xl text-[#7300FF]">
+                Associate Software Engineer
+              </h1>
+              <h1 className="font-light text-xl text-[#a4a4a4] italic">
+                Dec 2022 - Nov 2024
+              </h1>
+            </div>
+            <h1 className="w-[50%]">
+              <ul className="font-normal list-disc list-outside">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eius, consequatur. Tenetur eos numquam reiciendis. Adipisci
+                  corporis quibusdam minima cumque quis neque! Aliquam
+                  reiciendis placeat sapiente mollitia quod nisi fugiat debitis!
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eius, consequatur. Tenetur eos numquam reiciendis. Adipisci
+                  corporis quibusdam minima cumque quis neque! Aliquam
+                  reiciendis placeat sapiente mollitia quod nisi fugiat debitis!
+                </li>
+                <li className="text-[#a4a4a4] pt-2">
+                  <b>TechStack:</b> Typescript, Node, AWS
+                </li>
+              </ul>
+            </h1>
+          </div>
+        </div>
+
+        {/* footer */}
+        <div
+          className={`w-full ${inter.className} flex flex-row items-center justify-between px-25 pt-40`}
         >
-          my journey so far...
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            for Everyone
+          </h1>
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            Recruiters
+          </h1>
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            Collaborators
+          </h1>
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            Collaborators
+          </h1>
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            Collaborators
+          </h1>
+        </div>
+        <h1
+          className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-0% via-[#2F0069] via-60% to-[#110130] to-80% bg-clip-text text-[28svh] tracking-tighter text-center pb-20`}
+        >
+          That&apos;s My Journey So Far
         </h1>
-      </div>
-      <div className="py-10 px-5 md:px-20">
-        <div className="flex flex-row justify-start-safe items-center-safe gap-2 lg:gap-5">
-          <h1
-            className={`${poppins.className} text-2xl lg:text-5xl text-transparent bg-gradient-to-b from-[#ffffff] from-25%  to-[#19171B] to-120% bg-clip-text pb-2 capitalize`}
-          >
-            Work Experience
-          </h1>
-          <div className="w-5 h-5 lg:w-10 lg:h-10 -mt-1 rounded-full bg-linear-to-b from-[#75020F] from-12%  to-[#2B0307] to-100%" />
-        </div>
-        <div className="my-4 h-[2px] w-full bg-radial from-[#ffffff] from-0%  to-[#19171B] to-100%" />
-        <div className=" w-full flex flex-col md:flex-row justify-start items-start">
-          <span className="w-full md:w-2/6 capitalize">
-            <h1 className={`${poppins.className} text-2xl`}>Accenture</h1>
-            <h1 className={`${poppins.className} text-xl italic font-semibold`}>
-              Software Developer
-            </h1>
-            <h1 className={`${poppins.className} text-xl italic opacity-60`}>
-              Dec 2024 - Present
-            </h1>
-          </span>
-          <span
-            className={`${poppins.className} w-full md:w-4/6 pt-5 md:pt-0 px-5 md:px-0`}
-          >
-            <ul className="list-disc list-outside">
-              <li className="pb-5 text-just">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-                voluptas sint animi deleniti nostrum facilis minus
-                necessitatibus libero nobis inventore molestias odit, officia
-                quam. Nam reprehenderit quisquam debitis quos repellendus?
-              </li>
-              <li className="pb-5 text-just">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-                voluptas sint animi deleniti nostrum facilis minus
-                necessitatibus libero nobis inventore molestias odit, officia
-                quam. Nam reprehenderit quisquam debitis quos repellendus?
-              </li>
-            </ul>
-          </span>
-        </div>
-        <div className="my-4 h-[2px] w-full bg-white opacity-10" />
-        <div className=" w-full flex flex-col md:flex-row justify-start items-start">
-          <span className="w-full md:w-2/6 capitalize">
-            <h1 className={`${poppins.className} text-2xl bg-linear-to-b from-[#D8001B] via-[#75020F] to-[#45050e26] from-0% via-55% to-95% text-transparent bg-clip-text`}>Accenture</h1>
-            <h1 className={`${poppins.className} text-xl italic  font-semibold`}>
-              Accociate Software Developer
-            </h1>
-            <h1 className={`${poppins.className} text-xl italic opacity-60`}>
-              Dec 2022 - Nov 2024
-            </h1>
-          </span>
-          <span
-            className={`${poppins.className} w-full md:w-4/6 pt-5 md:pt-0 px-5 md:px-0`}
-          >
-            <ul className="list-disc list-outside">
-              <li className="pb-5 text-just">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-                voluptas sint animi deleniti nostrum facilis minus
-                necessitatibus libero nobis inventore molestias odit, officia
-                quam. Nam reprehenderit quisquam debitis quos repellendus?
-              </li>
-              <li className="pb-5 text-just">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-                voluptas sint animi deleniti nostrum facilis minus
-                necessitatibus libero nobis inventore molestias odit, officia
-                quam. Nam reprehenderit quisquam debitis quos repellendus?
-              </li>
-            </ul>
-          </span>
-        </div>
-      </div>
-      <div className="py-10 md:mt-20 px-5 md:px-20">
-        <div className="flex flex-row justify-start-safe items-center-safe gap-2 lg:gap-5">
-          <h1
-            className={`${poppins.className} text-2xl lg:text-5xl text-transparent bg-gradient-to-b from-[#ffffff] from-25%  to-[#19171B] to-120% bg-clip-text pb-2 capitalize`}
-          >
-            Education
-          </h1>
-          <div className="w-5 h-5 lg:w-10 lg:h-10 -mt-1 rounded-full bg-linear-to-b from-[#75020F] from-12%  to-[#2B0307] to-100%" />
-        </div>
-        <div className="my-4 h-[2px] w-full bg-radial from-[#ffffff] from-0%  to-[#19171B] to-100%" />
-        <div className=" w-full flex flex-col md:flex-row justify-between items-start ">
-          <span className="w-full md:w-3/6 capitalize">
-            <h1 className={`${poppins.className} text-2xl`}>Gogte instite of technology, Karnataka</h1>
-            <h1 className={`${poppins.className} text-xl`}>
-              B.tech - Electronics & Electronics Engineering
-            </h1>
-          </span>
-          <span>
-            <h1 className={`${poppins.className} w-full text-xl italic opacity-60`}>
-              Aug 2018 - July 2022
-            </h1>
-          </span>
-        </div>
-        <div className="my-4 h-[2px] w-full bg-white opacity-10 mb-30" />
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

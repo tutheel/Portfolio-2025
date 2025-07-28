@@ -1,83 +1,80 @@
+"use client";
 import React from "react";
-import { Oswald, Poppins, Smooch } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const oswald = Oswald({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
+const inter = Inter({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+  ],
 });
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-const smooch = Smooch({
-  weight:  "400",
-  subsets: ["latin"],
-  style: ["normal"],
-});
+
 function Footer() {
   return (
-    <section className="bg-[#060606] px-10">
-      {/* add translate-y-20 */}
-      <div className="w-full h-30 lg:h-52 flex items-center-safe justify-center">
-        <h1
-          className={`${poppins.className} capitalize text-transparent bg-gradient-to-b from-[#75020F] from-0%  to-[#19171B] to-70% bg-clip-text font-bold text-4xl md:text-4xl lg:text-8xl`}
-        >
-          dont be a stranger!!!
-        </h1>
-      </div>
-      <div className="w-full flex flex-row pt-10">
-        <div className="w-full">
+    <section className="w-full h-[100svh] bg-radial-[at_50%_-10%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
+      <div className="w-full h-[80svh] flex justify-around items-start">
+        {/* left half */}
+        <div className="w-1/2 h-full">
           <h1
-            className={`${poppins.className} text-2xl capitalize font-medium text-center`}
+            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_70%_10%] from-[#7300FF] from--10% via-[#2F0069] via-75% to-[#110130] to-90% bg-clip-text text-[15svh] tracking-tighter pt-30 pl-30 pr-30 text-left`}
           >
-            big ideas start with simple
+            Big Ideas Start With Simple
           </h1>
           <h1
-            className={`${smooch.className} text-9xl capitalize text-center mt-12 -rotate-10`}
-            //  text-transparent bg-gradient-to-b from-[#D8001B] via-[#75020F] from-10% to-120% bg-clip-text
+            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#FFFFFF] from-0% via-[#7300FF] via-50% to-[#2F0069] to-80% bg-clip-text text-[15svh] tracking-tighter pl-30 pr-30 text-left`}
           >
-            Hello!
+            Hello
           </h1>
         </div>
-        <div className="w-full">
-          <div className="pb-8">
+
+        {/* right half */}
+        <div className="w-1/2 h-full px-30 pt-30 text-xl">
+          {/* Email */}
+          <div className="pb-20">
             <h1
-              className={`${poppins.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
             >
               Email
             </h1>
             <a
-              className={`${poppins.className} text-md`}
+              className={`${inter.className} text-md`}
               href="mailto:sushilpatil953825@gmail.com"
             >
               sushilpatil953825@gmail.com
             </a>
           </div>
-          <div className="pb-8">
+          {/* Phone */}
+          <div className="pb-20">
             <h1
-              className={`${poppins.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
             >
               Phone
             </h1>
             <a
-              className={`${poppins.className} text-md`}
+              className={`${inter.className} text-md`}
               href="tel:+918618912612"
             >
               +91 861 891 2612
             </a>
           </div>
-          <div className="pb-8">
+          {/* Social */}
+          <div className="pb-20">
             <h1
-              className={`${poppins.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
             >
               social
             </h1>
             <div
-              className={`${poppins.className} flex flex-row justify-between pr-20`}
+              className={`${inter.className} flex flex-row justify-between pr-20`}
             >
-              <a href="http://">linked In</a>
+              <a href="http://">Linked In</a>
               <a href="https://github.com/tutheel">GitHub</a>
+              <a href="http://">Leet Code</a>
               <a href="http://">Behance</a>
               <a href="http://">Twitter</a>
               <a href="http://">Instagram</a>
@@ -85,14 +82,20 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className={`${poppins.className} text-center py-10 capitalize`}>
-        <h1 className="text-lg font-medium">Designed & Developed by Sushil</h1>
-        {/* <h1 className="text-lg font-semibold tracking-wide capitalize"> Sushil</h1> */}
-      </div>
-      <div className={`${poppins.className} text-5xl w-full h-80 flex justify-center-safe items-center-safe font-semibold rounded-3xl bg-radial-[at_50%_0%] from-[#D8001B] via-[#75020F] to-[#45050e26] from-0% via-55% to-120% capitalize`}> Code Cloud Creativity</div>
-      <div className={`${poppins.className} flex flex-row justify-between py-8 capitalize`}>
-        <h1> &#169; 2025 Sushil. all rights reserved</h1>
-        <h1>website still under development</h1>
+      <div className="w-full h-[20svh] font-light">
+        <div className={`${inter.className} text-center py-5 capitalize pt-10`}>
+          <h1 className="text-lg">
+            Designed & Developed by Sushil
+          </h1>
+          {/* <h1 className="text-lg font-semibold tracking-wide capitalize"> Sushil</h1> */}
+        </div>
+        <div
+          className={`${inter.className} flex flex-row justify-between px-8 capitalize`}
+        >
+          <h1> &#169; 2025 Sushil. all rights reserved</h1>
+          <h1 className="text-gray-400"> Last Updated - July 28, 2025 at 6:24PM IST+5</h1>
+          <h1>website still under development</h1>
+        </div>
       </div>
     </section>
   );

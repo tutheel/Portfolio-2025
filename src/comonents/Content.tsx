@@ -69,8 +69,8 @@ function Content() {
         <Projects/>
         <Skills />
         <Services />
-        {/* <Experience/>
-        <Footer/> */}
+        <Experience/>
+        <Footer/>
       </div>
     </div>
   );

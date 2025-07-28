@@ -8,7 +8,7 @@ import Loader from "@/comonents/Loader";
 import Projects from "@/comonents/Projects";
 import Services from "@/comonents/Services";
 import Skills from "@/comonents/Skills";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ export default function Home() {
       {/* <Projects/> */}
       {/* <Skills/> */}
       {/* <Services/> */}
-      {/* <Experience/> */}
+      {/* <Experience /> */}
       {/* <Footer/> */}
     </>
   );
