@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import Hero from "./Hero";
 import About from "./About";
 import Skills from "./Skills";
