@@ -32,9 +32,9 @@ This will create a static export in the `out/` directory.
 
 ## Deployment
 
-This project can be deployed to multiple platforms. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+This project is configured for deployment on Vercel. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-### 🚀 Vercel (Recommended)
+### 🚀 Vercel Deployment
 
 Vercel is the easiest platform for Next.js projects:
 
@@ -53,14 +53,6 @@ Vercel is the easiest platform for Next.js projects:
    - Go to [vercel.com](https://vercel.com)
    - Import your GitHub repository
    - Automatic deployments on every push
-
-### 🌐 GitHub Pages
-
-The project is also configured for GitHub Pages:
-
-1. **Enable GitHub Pages** in repository settings
-2. **Push to main branch** triggers automatic deployment
-3. **Your site**: `https://[username].github.io/[repo-name]/`
 
 ### Manual Build
 
