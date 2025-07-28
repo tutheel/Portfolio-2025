@@ -32,26 +32,40 @@ This will create a static export in the `out/` directory.
 
 ## Deployment
 
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+This project can be deployed to multiple platforms. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-### GitHub Pages Setup
+### 🚀 Vercel (Recommended)
 
-1. **Enable GitHub Pages**:
-   - Go to your repository settings
-   - Navigate to "Pages" in the sidebar
-   - Under "Source", select "GitHub Actions"
+Vercel is the easiest platform for Next.js projects:
 
-2. **Push to Main Branch**:
-   - The GitHub Actions workflow will automatically build and deploy your site
-   - Your site will be available at: `https://[your-username].github.io/home-page/`
+1. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
 
-### Manual Deployment
+2. **Deploy**:
+   ```bash
+   vercel login
+   vercel
+   ```
 
-If you want to deploy manually:
+3. **Or connect via GitHub**:
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Automatic deployments on every push
+
+### 🌐 GitHub Pages
+
+The project is also configured for GitHub Pages:
+
+1. **Enable GitHub Pages** in repository settings
+2. **Push to main branch** triggers automatic deployment
+3. **Your site**: `https://[username].github.io/[repo-name]/`
+
+### Manual Build
 
 ```bash
 npm run build
-npm run export
 ```
 
 The static files will be generated in the `out/` directory.
