@@ -3,11 +3,5 @@
   "outputDirectory": "out",
   "framework": "nextjs",
   "installCommand": "npm install",
-  "devCommand": "npm run dev",
-  "regions": ["iad1"],
-  "functions": {
-    "app/**/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "devCommand": "npm run dev"
 } 
