@@ -1,4 +1,5 @@
 "use client";
+import DesignOrbs from "@/components/DesignOrbs";
 import { Inter } from "next/font/google";
 // import { useEffect, useRef } from "react";
 // import { gsap, CSSPlugin } from "gsap";
@@ -127,73 +128,40 @@ function Hero() {
   // };
 
   return (
-    <section className="w-full h-screen bg-radial-[at_50%_120%] from-[#240051]  to-[#000000] to-90%">
+    <section className="w-full h-screen bg-radial-[at_50%_160%] from-[#240051]  to-[#000000] to-60%">
       {/* hero head */}
       <div className="relative w-full h-11/12">
         {/* text */}
-        <div className=" absolute inset-0 w- full h-full flex flex-col justify-center items-center z-10 pt-20">
+        <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center z-10 pt-20 text-center">
           <h1
             className={`${inter.className} text-white text-5xl font-light tracking-tighter`}
           >
             Hello I&apos;m
           </h1>
           <h1
-            className={`${inter.className} text-white text-[15vh] font-normal tracking-tighter leading-none`}
+            className={`${inter.className} text-white text-[13vh] font-normal tracking-tighter leading-none`}
           >
             Sushil Patil
           </h1>
-          <h1 className={`${inter.className} text-white text-xl font-medium`}>
+          <h1 className={`${inter.className} text-white text-md font-normal`}>
             Creative Developer & Designer
           </h1>
           <h1
-            className={`${inter.className} text-gray-500 text-xl font-medium`}
+            className={`${inter.className} text-gray-400 text-md font-normal`}
           >
             From Karnataka, India
           </h1>
         </div>
         {/* design */}
-        <div className="absolute inset-0 flex justify-between items-center z-0 pointer-events-none blur-[1px] pt-8">
-          {/* Left image: show only right half */}
-          <div className="relative w-[400px] h-[800px] overflow-hidden flex-shrink-0">
-            <div
-              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_50s_linear_infinite_reverse]"
-              style={{
-                WebkitMaskImage: "url(../indian.png)",
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "cover",
-                maskImage: "url(../indian.png)",
-                maskRepeat: "no-repeat",
-                maskSize: "cover",
-                background:
-                  "radial-gradient(circle at 50% 50%, #F0F0F0E6 0.2%, #4C00D8 40%, #060606 100%)",
-                left: "-400px", // show only right half
-                top: "0",
-              }}
-            />
-          </div>
-          {/* Right image: show only left half */}
-          <div className="relative w-[400px] h-[800px] overflow-hidden flex-shrink-0">
-            <div
-              className="absolute left-0 top-0 w-[800px] h-[800px] animate-[spin_50s_linear_infinite]"
-              style={{
-                WebkitMaskImage: "url(../indian.png)",
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "cover",
-                maskImage: "url(../indian.png)",
-                maskRepeat: "no-repeat",
-                maskSize: "cover",
-                background:
-                  "radial-gradient(circle at 50% 50%, #F0F0F0E6 0.2%, #4C00D8 40%, #060606 100%)",
-                left: "0", // show only left half
-                top: "0",
-              }}
-            />
-          </div>
+        <div className="relative w-full h-11/12 top-12">
+          {/* text block … your existing content … */}
+          {/* design layer behind the text */}
+          <DesignOrbs />
         </div>
       </div>
 
       {/* hero footer */}
-      <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center px-5">
+      <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center px-5 text-sm">
         <div className="mb-2 mt-5 text-gray-500 lg:mt-0 font-medium">
           {day} {month} {year}
         </div>

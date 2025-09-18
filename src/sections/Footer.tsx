@@ -28,21 +28,21 @@ function Footer() {
           <h1
             className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#FFFFFF] from-0% via-[#7300FF] via-50% to-[#2F0069] to-80% bg-clip-text text-[15svh] tracking-tighter pl-30 pr-30 text-left`}
           >
-            Hello
+            Hello<i>!</i>
           </h1>
         </div>
 
         {/* right half */}
-        <div className="w-1/2 h-full px-30 pt-30 text-xl">
+        <div className="w-1/2 h-full px-30 pt-40">
           {/* Email */}
           <div className="pb-20">
             <h1
-              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
             >
               Email
             </h1>
             <a
-              className={`${inter.className} text-md`}
+              className={`${inter.className} text-sm transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]`}
               href="mailto:sushilpatil953825@gmail.com"
             >
               sushilpatil953825@gmail.com
@@ -51,12 +51,12 @@ function Footer() {
           {/* Phone */}
           <div className="pb-20">
             <h1
-              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
             >
               Phone
             </h1>
             <a
-              className={`${inter.className} text-md`}
+              className={`${inter.className} text-sm transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]`}
               href="tel:+918618912612"
             >
               +91 861 891 2612
@@ -65,26 +65,26 @@ function Footer() {
           {/* Social */}
           <div className="pb-20">
             <h1
-              className={`${inter.className} text-lg opacity-60 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
             >
               social
             </h1>
             <div
-              className={`${inter.className} flex flex-row justify-between pr-20`}
+              className={`${inter.className} text-sm flex flex-row justify-between pr-20`}
             >
-              <a href="http://">Linked In</a>
-              <a href="https://github.com/tutheel">GitHub</a>
-              <a href="http://">Leet Code</a>
-              <a href="http://">Behance</a>
-              <a href="http://">Twitter</a>
-              <a href="http://">Instagram</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Linked In</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="https://github.com/tutheel">GitHub</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Leet Code</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Behance</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Twitter</a>
+              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Instagram</a>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full h-[20svh] font-light">
-        <div className={`${inter.className} text-center py-5 capitalize pt-10`}>
-          <h1 className="text-lg">
+      <div className="w-full h-[20svh] font-light text-sm pt-10">
+        <div className={`${inter.className} text-center py-5 capitalize`}>
+          <h1 className="text-md">
             Designed & Developed by Sushil
           </h1>
           {/* <h1 className="text-lg font-semibold tracking-wide capitalize"> Sushil</h1> */}
