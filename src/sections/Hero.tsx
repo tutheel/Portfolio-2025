@@ -139,7 +139,7 @@ function Hero() {
             Hello I&apos;m
           </h1>
           <h1
-            className={`${inter.className} text-white text-[13vh] font-normal tracking-tighter leading-none`}
+            className={`${inter.className} text-white text-[17vh] font-normal tracking-tighter leading-none`}
           >
             Sushil Patil
           </h1>
@@ -153,7 +153,7 @@ function Hero() {
           </h1>
         </div>
         {/* design */}
-        <div className="relative w-full h-11/12 top-12">
+        <div className="relative w-full h-11/12 top-12 blur-[1px]">
           {/* text block … your existing content … */}
           {/* design layer behind the text */}
           <DesignOrbs />
@@ -161,13 +161,18 @@ function Hero() {
       </div>
 
       {/* hero footer */}
-      <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center px-5 text-sm">
-        <div className="mb-2 mt-5 text-gray-500 lg:mt-0 font-medium">
+      <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center text-sm text-center">
+        <div className="mb-2 mt-5 pl-5 text-gray-500 lg:mt-0 font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
           {day} {month} {year}
         </div>
-        <div className="mb-2 mt-5 lg:mt-0">Scroll Down</div>
+        <div className="mb-2 mt-5 lg:pr-8 lg:mt-0">Scroll Down</div>
         <div className="mb-2 mt-5 text-gray-500 lg:mt-0 font-medium">
-          <a href="">Resume</a>
+          <a
+            className="transition-colors pr-5 duration-500 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_0px_5px_#7327ff]"
+            href=""
+          >
+            Resume
+          </a>
         </div>
       </div>
     </section>

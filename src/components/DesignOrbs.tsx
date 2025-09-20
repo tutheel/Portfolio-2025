@@ -19,7 +19,7 @@ export default function DesignImagesMasked() {
     >
       {/* LEFT EDGE — shows only RIGHT half (all breakpoints) */}
       <div
-        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:38rem]"
+        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:45rem]"
         style={{ width: "calc(var(60rem) / 2)", height: "var(--d)" }}
       >
         {/* Inner canvas is full size; we shift it so only the right half is visible */}
@@ -29,37 +29,19 @@ export default function DesignImagesMasked() {
         >
           {/* Rotating PNG */}
           <Image
-            src="/indian.png"
+            src="/Indian_Design.png"
             alt=""
             fill
             className="object-contain animate-[spin_20s_linear_infinite_reverse]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />
-          {/* Color overlay, masked to PNG alpha so tint stays INSIDE the image only */}
-          <div
-            className="absolute inset-0 animate-[spin_20s_linear_infinite_reverse] mix-blend-screen opacity-80 will-change-transform [backface-visibility:hidden]"
-            style={{
-              background:
-                "radial-gradient(circle at 50% 50%, #F0F0F0E6 0%, #4C00D8 30%, #192bc2 55%, #27187e70 70%)",
-              // Mask the overlay to the PNG's alpha
-              WebkitMaskImage: "url(/indian.png)",
-              WebkitMaskRepeat: "no-repeat",
-              WebkitMaskPosition: "center",
-              WebkitMaskSize: "contain",
-              maskImage: "url(/indian.png)",
-              maskRepeat: "no-repeat",
-              maskPosition: "center",
-              maskSize: "contain",
-              maskMode: "alpha",
-            }}
-          />
         </div>
       </div>
 
       {/* RIGHT EDGE — md+ only: shows only LEFT half */}
       <div
-        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:38rem]"
+        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:45rem]"
         style={{ width: "calc(var(--d) / 2)", height: "var(--d)" }}
       >
         <div
@@ -67,14 +49,14 @@ export default function DesignImagesMasked() {
           style={{ width: "var(--d)", height: "var(--d)" }}
         >
           <Image
-            src="/indian.png"
+            src="/Indian_Design.png"
             alt=""
             fill
             className="object-contain animate-[spin_20s_linear_infinite]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />
-          <div
+          {/* <div
             className="absolute inset-0 animate-[spin_20s_linear_infinite] mix-blend-screen opacity-80 will-change-transform [backface-visibility:hidden]"
             style={{
               background:
@@ -89,7 +71,7 @@ export default function DesignImagesMasked() {
               maskSize: "contain",
               maskMode: "alpha",
             }}
-          />
+          /> */}
         </div>
       </div>
 

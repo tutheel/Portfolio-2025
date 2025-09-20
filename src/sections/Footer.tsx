@@ -33,11 +33,11 @@ function Footer() {
         </div>
 
         {/* right half */}
-        <div className="w-1/2 h-full px-30 pt-40">
+        <div className="w-1/2 h-full px-20 pt-40">
           {/* Email */}
-          <div className="pb-20">
+          <div className="pb-5">
             <h1
-              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize`}
             >
               Email
             </h1>
@@ -49,9 +49,9 @@ function Footer() {
             </a>
           </div>
           {/* Phone */}
-          <div className="pb-20">
+          <div className="pb-5">
             <h1
-              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize`}
             >
               Phone
             </h1>
@@ -63,9 +63,9 @@ function Footer() {
             </a>
           </div>
           {/* Social */}
-          <div className="pb-20">
+          <div className="pb-5">
             <h1
-              className={`${inter.className} text-md opacity-80 capitalize pb-2`}
+              className={`${inter.className} text-md opacity-80 capitalize`}
             >
               social
             </h1>
