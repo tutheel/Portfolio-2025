@@ -32,7 +32,7 @@ export default function DesignImagesMasked() {
             src="/Indian_Design.png"
             alt=""
             fill
-            className="object-contain animate-[spin_20s_linear_infinite_reverse]"
+            className="object-contain animate-[spin_50s_linear_infinite_reverse]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />
@@ -52,26 +52,10 @@ export default function DesignImagesMasked() {
             src="/Indian_Design.png"
             alt=""
             fill
-            className="object-contain animate-[spin_20s_linear_infinite]"
+            className="object-contain animate-[spin_50s_linear_infinite]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />
-          {/* <div
-            className="absolute inset-0 animate-[spin_20s_linear_infinite] mix-blend-screen opacity-80 will-change-transform [backface-visibility:hidden]"
-            style={{
-              background:
-                "radial-gradient(circle at 50% 50%, #F0F0F0E6 0%, #4C00D8 30%, #192bc2 55%, #27187e70 70%)",
-              WebkitMaskImage: "url(/indian.png)",
-              WebkitMaskRepeat: "no-repeat",
-              WebkitMaskPosition: "center",
-              WebkitMaskSize: "contain",
-              maskImage: "url(/indian.png)",
-              maskRepeat: "no-repeat",
-              maskPosition: "center",
-              maskSize: "contain",
-              maskMode: "alpha",
-            }}
-          /> */}
         </div>
       </div>
 

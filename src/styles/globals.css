@@ -37,6 +37,54 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* 
+.card-shadow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+} */
+
+/* Base background gradient with variables */
+.bg-purple {
+  --from: #3D0088;
+  --via:  #15002F;
+  --to:   #080112;
+
+  background: linear-gradient(to bottom,
+    var(--from) 10%,
+    var(--via) 70%,
+    var(--to) 110%
+  );
+  transition: background 500ms ease, filter 500ms ease;
+}
+
+/* Hover: slightly brighter + shifted stops */
+.bg-purple:hover {
+  --from: #4b00b3;  /* lighter than #3D0088 */
+  --via:  #1b003a;  /* lighter than #15002F */
+  --to:   #0d0218;  /* lighter than #080112 */
+  filter: brightness(1.06);
+}
+
+/* #7300FF drop shadow that sits below the element */
+.purple-drop {
+  --y: 20px;        /* vertical offset (downwards) */
+  --blur: 70px;     /* blur radius */
+  --spread: -12px;   /* tighter edge */
+  --alpha: 0.35;    /* opacity */
+  box-shadow: 0 var(--y) var(--blur) var(--spread) rgba(115, 0, 255, var(--alpha));
+}
+
+/* Optional presets */
+.purple-drop-sm { --y: 10px; --blur: 16px; --spread: -6px; --alpha: 0.35; }
+.purple-drop-lg { --y: 18px; --blur: 36px; --spread: -10px; --alpha: 0.5; }
+
+.purple-drop { transition: box-shadow 200ms ease; }
+
+.purple-drop:hover {
+  --y: 18px;
+  --blur: 36px;
+  --spread: -10px;
+  --alpha: 0.55;
 }
