@@ -1,4 +1,6 @@
 "use client";
+import SecondaryTitle from "@/components/SecondaryTitle";
+import ServiceCard from "@/components/ServiceCard";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -16,7 +18,7 @@ const inter = Inter({
 function Services() {
   return (
     <>
-      <section className="w-full h-[120svh] bg-radial-[at_50%_0%] from-[#FFFFFF] from-45%  via-[#3D0089] via-85% to-[#1B003B] to-95% text-black">
+      {/* <section className="w-full h-[120svh] bg-radial-[at_50%_0%] from-[#FFFFFF] from-45%  via-[#3D0089] via-85% to-[#1B003B] to-95% text-black">
         <h1
           className={`${inter.className} leading-none font-bold text-transparent bg-linear-to-b from-[#FFFFFF] from-30% via-[#7300FF] via-100% to-[#2F0069] to-450% bg-clip-text text-[34svh] tracking-tighter text-center pt-30`}
         >
@@ -56,6 +58,28 @@ function Services() {
             <h1 className={`${inter.className} font-semibold text-4xl pt-8 text-transparent bg-linear-to-b from-[#7300FF] from-60% to-[#15003B] to-100% bg-clip-text`}>Cloud Solution</h1>
             <h1 className={`${inter.className} font-semibold text-[#49029F] pt-8`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quam nostrum impedit possimus rerum nisi necessitatibus. Aliquam cupiditate sapiente veniam minima iste debitis, ullam nam voluptates, maxime maiores facere! Veniam?</h1>
           </div>
+        </div>
+      </section> */}
+      <section className={`${inter.className} w-full h-screen bg-radial-[at_50%_0%] from-[#000000] from-60%  to-[#240051] to-115%`}>
+        <div className="w-full h-5/15">
+          <h1
+            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-55% to-[#110130] to-75% bg-clip-text text-[16rem] tracking-tighter text-center`}
+          >
+            Services
+          </h1>
+          <div
+            className={`w-full ${inter.className} flex flex-row items-center justify-between px-80 opacity-80`}
+          >
+            <SecondaryTitle text="Collaborators" />
+            <SecondaryTitle text="Recruiters" />
+            <SecondaryTitle text="Recruiters" />
+            <SecondaryTitle text="Recruiters" />
+          </div>
+        </div>
+        <div className="w-full h-10/15 flex justify-between items-center px-60">
+          <ServiceCard/>
+          <ServiceCard/>
+          <ServiceCard/>
         </div>
       </section>
     </>

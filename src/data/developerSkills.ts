@@ -1,3 +1,5 @@
+"use client";
+
 const developerSkills = {
   languages: ["JavaScript", "TypeScript", "Python", "Java", "HTML", "CSS"],
   frameworks: [

@@ -1,3 +1,4 @@
+"use client";
 // data/designerSkills.ts
 const designerSkills = {
   UIUX: [

@@ -1,3 +1,4 @@
+"use client";
 declare module "vanta/dist/vanta.fog.min" {
   import * as THREEType from "three";
   export type VantaEffect = {

@@ -45,6 +45,8 @@ body {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
 } */
 
+
+/* ----------Project Cards Colours and effects ---------- */
 /* Base background gradient with variables */
 .bg-purple {
   --from: #3D0088;
@@ -58,8 +60,6 @@ body {
   );
   transition: background 500ms ease, filter 500ms ease;
 }
-
-/* ---------- Cards Colours and effects ---------- */
 /* Hover: slightly brighter + shifted stops */
 .bg-purple:hover {
   --from: #4b00b3;  /* lighter than #3D0088 */
@@ -84,6 +84,49 @@ body {
 .purple-drop { transition: box-shadow 200ms ease; }
 
 .purple-drop:hover {
+  --y: 18px;
+  --blur: 36px;
+  --spread: -10px;
+  --alpha: 0.55;
+}
+
+/* ----------Service Cards Colours and effects ---------- */
+.bg-service-purple {
+  --from: #080112;
+  --via:  #15002F;
+  --to:   #3D0088;
+
+  background: linear-gradient(to bottom,
+    var(--from) 10%,
+    var(--via) 70%,
+    var(--to) 110%
+  );
+  transition: background 1000ms ease, filter 1000ms ease;
+}
+/* Hover: slightly brighter + shifted stops */
+.bg-service-purple:hover {
+  --from: #0d0218;  /* lighter than #3D0088 */
+  --via:  #1b003a;  /* lighter than #15002F */
+  --to:   #4b00b3;  /* lighter than #080112 */
+  filter: brightness(1.2);
+}
+
+/* #7300FF drop shadow that sits below the element */
+.purple-service-drop {
+  --y: 20px;        /* vertical offset (downwards) */
+  --blur: 70px;     /* blur radius */
+  --spread: -12px;   /* tighter edge */
+  --alpha: 0.65;    /* opacity */
+  box-shadow: 0 var(--y) var(--blur) var(--spread) rgba(115, 0, 255, var(--alpha));
+}
+
+/* Optional presets */
+.purple-service-drop-sm { --y: 10px; --blur: 16px; --spread: -6px; --alpha: 0.35; }
+.purple-service-drop-lg { --y: 18px; --blur: 36px; --spread: -10px; --alpha: 0.5; }
+
+.purple-service-drop { transition: box-shadow 200ms ease; }
+
+.purple-service-drop:hover {
   --y: 18px;
   --blur: 36px;
   --spread: -10px;
