@@ -59,6 +59,7 @@ body {
   transition: background 500ms ease, filter 500ms ease;
 }
 
+/* ---------- Cards Colours and effects ---------- */
 /* Hover: slightly brighter + shifted stops */
 .bg-purple:hover {
   --from: #4b00b3;  /* lighter than #3D0088 */
@@ -88,3 +89,26 @@ body {
   --spread: -10px;
   --alpha: 0.55;
 }
+
+/* ---------- Inner Shadow (CSS approximation) ----------
+   True "inset text-shadow" doesn't exist, so we fake an inner look
+   with layered subtle shadows. Tune the alphas to taste. */
+.text-inner-shadow {
+  text-shadow:
+    0 1px 0 rgba(119, 0, 255, 0.35),
+    0 1px  1.5px rgba(0,0,0,0.30),
+    0 -0.5px 0 rgba(106, 0, 255, 0.15);
+}
+
+/* ---------- Optional: Color Dodge blend for extra glow ---------- */
+.blend-color-dodge { mix-blend-mode: color-dodge; }
+.blend-isolate     { isolation: isolate; } /* keep blending local */
+
+/* ---------- something good for the texts ---------- */
+/* .text-inner-shadow {
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.35),
+    0 1px  15px rgba(0,0,0,0.30),
+    0 -0.5px 0 rgba(0,0,0,0.15);
+  opacity: 0.5;
+} */

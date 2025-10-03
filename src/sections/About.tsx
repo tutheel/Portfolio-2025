@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
+import VantaBackground from "@/components/VantaBackground";
 // import Image from "next/image";
+import Audiences from "@/components/Audiences";
+import SecondaryTitle from "@/components/SecondaryTitle";
+import ProfilePicture from "@/components/ProfilePicture";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -27,15 +31,19 @@ const textOne: string =
 function About() {
   return (
     <>
-      <section className="w-full h-[120svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
-        <div className={`w-full ${inter.className} flex flex-row items-center justify-evenly px-80 pb-10 pt-60`}>
-          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">for Everyone</h1>
+      <section
+        className={`relative w-full h-screen overflow-hidden ${inter.className}`}
+      >
+        {/* <div>
+          <div className={`w-full ${inter.className} flex flex-row justify-between px-80 pb-10 pt-20 items-start`}>
+          <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">For Everyone</h1>
           <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">Recruiters</h1>
           <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">Collaborators</h1>
         </div>
         <h1 className={`${inter.className} text-4xl text-center px-80`}>
           {textOne}
         </h1>
+        </div>
         <div className={`w-full ${inter.className} flex flex-row items-center justify-between px-25 pt-60`}>
           <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">for Everyone</h1>
           <h1 className="font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">Recruiters</h1>
@@ -45,7 +53,43 @@ function About() {
         </div>
         <h1 className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-0% via-[#2F0069] via-60% to-[#110130] to-80% bg-clip-text text-[35svh] tracking-tighter text-center pb-20`}>
           About Sushil
-        </h1>
+        </h1> */}
+        {/* Vanta full-bleed background */}
+        <VantaBackground />
+        {/* Your foreground content goes here; ensure it sits above */}
+         <div className="w-full h-6/10 flex">
+          <span className="w-6/10 px-25 py-25 flex flex-col justify-center">
+            <div
+              className={`w-7/12 ${inter.className} flex flex-row justify-between pb-10`}
+            >
+              <Audiences text="For Everyone" />
+              <Audiences text="Recruiters" />
+              <Audiences text="Collaborators" />
+            </div>
+            <h1 className={`${inter.className} text-lg text-left `}>
+              {textOne}
+            </h1>
+          </span>
+           <span className="w-4/10 relative z-50">
+            <ProfilePicture />
+          </span>
+        </div>
+        <div className="w-full h-4/10">
+          <h1
+            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-0% via-[#2F0069] via-80% to-[#110130] to-155% bg-clip-text text-[16rem] tracking-tighter text-center`}
+          >
+            About Sushil
+          </h1>
+          <div
+            className={`w-full ${inter.className} flex flex-row items-center justify-between px-10`}
+          >
+            <SecondaryTitle text="Collaborators" />
+            <SecondaryTitle text="Recruiters" />
+            <SecondaryTitle text="Recruiters" />
+            <SecondaryTitle text="Recruiters" />
+            <SecondaryTitle text="for Everyone" />
+          </div>
+        </div>
       </section>
     </>
   );
