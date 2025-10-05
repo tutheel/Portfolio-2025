@@ -101,7 +101,7 @@ body {
     var(--via) 70%,
     var(--to) 110%
   );
-  transition: background 1000ms ease, filter 1000ms ease;
+  transition: background 700ms ease, filter 700ms ease;
 }
 /* Hover: slightly brighter + shifted stops */
 .bg-service-purple:hover {
@@ -113,10 +113,10 @@ body {
 
 /* #7300FF drop shadow that sits below the element */
 .purple-service-drop {
-  --y: 20px;        /* vertical offset (downwards) */
-  --blur: 70px;     /* blur radius */
-  --spread: -12px;   /* tighter edge */
-  --alpha: 0.65;    /* opacity */
+  --y: 18px;
+  --blur: 36px;
+  --spread: -10px;
+  --alpha: 0.55;
   box-shadow: 0 var(--y) var(--blur) var(--spread) rgba(115, 0, 255, var(--alpha));
 }
 
@@ -124,13 +124,13 @@ body {
 .purple-service-drop-sm { --y: 10px; --blur: 16px; --spread: -6px; --alpha: 0.35; }
 .purple-service-drop-lg { --y: 18px; --blur: 36px; --spread: -10px; --alpha: 0.5; }
 
-.purple-service-drop { transition: box-shadow 200ms ease; }
+.purple-service-drop { transition: box-shadow 700ms ease; }
 
 .purple-service-drop:hover {
-  --y: 18px;
-  --blur: 36px;
-  --spread: -10px;
-  --alpha: 0.55;
+  --y: 20px;        /* vertical offset (downwards) */
+  --blur: 70px;     /* blur radius */
+  --spread: -12px;   /* tighter edge */
+  --alpha: 0.65;    /* opacity */
 }
 
 /* ---------- Inner Shadow (CSS approximation) ----------

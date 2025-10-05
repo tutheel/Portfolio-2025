@@ -1,6 +1,7 @@
 "use client";
 import SecondaryTitle from "@/components/SecondaryTitle";
 import ServiceCard from "@/components/ServiceCard";
+import servicesData from "@/data/servicesData";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -60,7 +61,9 @@ function Services() {
           </div>
         </div>
       </section> */}
-      <section className={`${inter.className} w-full h-screen bg-radial-[at_50%_0%] from-[#000000] from-60%  to-[#240051] to-115%`}>
+      <section
+        className={`${inter.className} w-full h-screen bg-radial-[at_50%_0%] from-[#000000] from-60%  to-[#240051] to-115%`}
+      >
         <div className="w-full h-5/15">
           <h1
             className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-55% to-[#110130] to-75% bg-clip-text text-[16rem] tracking-tighter text-center`}
@@ -76,10 +79,10 @@ function Services() {
             <SecondaryTitle text="Recruiters" />
           </div>
         </div>
-        <div className="w-full h-10/15 flex justify-between items-center px-60">
-          <ServiceCard/>
-          <ServiceCard/>
-          <ServiceCard/>
+        <div className="w-full h-10/15 flex justify-between items-center px-20">
+          {servicesData.map((p) => (
+            <ServiceCard key={p.id} service={p} />
+          ))}
         </div>
       </section>
     </>

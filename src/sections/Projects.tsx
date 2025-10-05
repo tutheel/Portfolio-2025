@@ -2,7 +2,7 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import ProjectCard from "@/components/ProjectCard";
-import projectData from "@/data/ProjectsData"; // adjust to your path
+import projectData from "@/data/projectsData"; // adjust to your path
 // import Image from "next/image";
 // import { FiLink } from "react-icons/fi";
 
