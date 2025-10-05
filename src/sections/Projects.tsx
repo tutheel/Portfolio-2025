@@ -2,6 +2,7 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import ProjectCard from "@/components/ProjectCard";
+import projectData from "@/data/ProjectsData"; // adjust to your path
 // import Image from "next/image";
 // import { FiLink } from "react-icons/fi";
 
@@ -28,12 +29,10 @@ function Projects() {
       </h1>
       {/* content */}
       <div className="w-full h-[60%] flex items-center justify-center gap-10 leading-none">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projectData.map((p) => (
+          <ProjectCard key={p.id} project={p} />
+        ))}
       </div>
-
     </section>
   );
 }

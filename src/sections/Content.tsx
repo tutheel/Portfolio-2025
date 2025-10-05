@@ -66,10 +66,10 @@ function Content() {
       <div ref={homePageRef} className="relative z-10">
         <Hero />
         <About />
+        <Experience/>
         <Projects/>
         <Skills />
         <Services />
-        <Experience/>
         <Footer/>
       </div>
     </div>

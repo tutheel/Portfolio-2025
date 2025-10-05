@@ -42,7 +42,7 @@ function Footer() {
               Email
             </h1>
             <a
-              className={`${inter.className} text-sm transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]`}
+              className={`${inter.className} text-sm transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]`}
               href="mailto:sushilpatil953825@gmail.com"
             >
               sushilpatil953825@gmail.com
@@ -56,7 +56,7 @@ function Footer() {
               Phone
             </h1>
             <a
-              className={`${inter.className} text-sm transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]`}
+              className={`${inter.className} text-sm transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]`}
               href="tel:+918618912612"
             >
               +91 861 891 2612
@@ -72,12 +72,12 @@ function Footer() {
             <div
               className={`${inter.className} text-sm flex flex-row justify-between pr-20`}
             >
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Linked In</a>
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="https://github.com/tutheel">GitHub</a>
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Leet Code</a>
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Behance</a>
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Twitter</a>
-              <a className="transition-colors duration-400 text-[#4C00D8] hover:text-white hover:drop-shadow-[0_0_10px_#4C00D8]" href="http://">Instagram</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="http://">Linked In</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="https://github.com/tutheel">GitHub</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="http://">Leet Code</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="http://">Behance</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="http://">Twitter</a>
+              <a className="transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]" href="http://">Instagram</a>
             </div>
           </div>
         </div>

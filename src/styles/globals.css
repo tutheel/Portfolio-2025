@@ -65,7 +65,7 @@ body {
   --from: #4b00b3;  /* lighter than #3D0088 */
   --via:  #1b003a;  /* lighter than #15002F */
   --to:   #0d0218;  /* lighter than #080112 */
-  filter: brightness(1.06);
+  filter: brightness(1.1);
 }
 
 /* #7300FF drop shadow that sits below the element */
