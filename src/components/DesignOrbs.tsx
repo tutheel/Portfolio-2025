@@ -31,7 +31,7 @@ export default function DesignImagesMasked() {
             src="/Indian_Design.png"
             alt=""
             fill
-            className="object-contain animate-[spin_50s_linear_infinite_reverse]"
+            className="object-contain animate-[spin_90s_linear_infinite_reverse]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />
@@ -51,7 +51,7 @@ export default function DesignImagesMasked() {
             src="/Indian_Design.png"
             alt=""
             fill
-            className="object-contain animate-[spin_50s_linear_infinite]"
+            className="object-contain animate-[spin_90s_linear_infinite]"
             sizes="(min-width: 1024px) 34rem, (min-width: 768px) 28rem, 18rem"
             priority
           />

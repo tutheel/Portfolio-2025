@@ -20,14 +20,16 @@ const Experience = () => {
       <section className="w-full h-[250svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
         {/* heading */}
         <h1
+          data-snap-anchor
           className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-70% to-[#110130] to-95% bg-clip-text text-[30svh] tracking-tighter text-center pt-15 px-10`}
         >
           My Journey So Far...
         </h1>
         {/* Content */}
         <div className={` w-full ${inter.className} px-40 pt-10`}>
-        <div className="h-[3px] w-full bg-[#2d0064]"></div>
-          <div className="flex justify-around py-4">
+          {/* experience - 1 */}
+          <div className="h-[3px] w-full bg-[#2d0064]"></div>
+          <div className="flex justify-around py-4" data-snap-anchor>
             <h1 className="w-[25%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
               Accenture
             </h1>
@@ -92,8 +94,9 @@ const Experience = () => {
               </ul>
             </h1>
           </div>
+          {/* experience - 2 */}
           <div className="h-[3px] w-full bg-[#2d0064]"></div>
-          <div className="flex justify-around py-4">
+          <div className="flex justify-around py-4" data-snap-anchor>
             <h1 className="w-[25%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
               Accenture
             </h1>
