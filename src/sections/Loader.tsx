@@ -1,214 +1,132 @@
 "use client";
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { gsap, CSSPlugin } from "gsap";
-import { Oswald } from "next/font/google";
-gsap.registerPlugin(CSSPlugin);
+import React, { useEffect, useState } from "react";
 
-const oswald = Oswald({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+// Loader configuration and callback props
+// Flow overview:
+// 1) Wait optional start delay
+// 2) Begin ticking progress up to 95%
+// 3) When window fully loads, wait until minimum duration is satisfied
+// 4) Set progress to 100%
+// 5) Fade out the percentage text, then hide it (display: none)
+// 6) Fade out the overlay, then call onFinish()
+type LoaderProps = {
+  onFinish?: () => void;
+  startDelayMs?: number;       // delay before progress starts
+  minDurationMs?: number;      // minimum time loader stays visible
+  tickIntervalMs?: number;     // how fast % increases before load
+  fallbackMs?: number;         // safety timeout to force-complete
+  textFadeMs?: number;         // fade duration for the 100% text
+  overlayFadeMs?: number;      // fade duration for overlay
+};
 
-function Loader({ onFinish }: { onFinish?: () => void }) {
-  const [counter, setCounter] = useState(0);
-  const progressBarRef = useRef(null);
-  const followRef = useRef(null);
-  const followRefTwo = useRef(null);
-  const counterRef = useRef(null);
-  const loadRef = useRef(null);
-  const mainLoadRef = useRef(null);
-  // const contentLinesRef = useRef(null);
-  // const line1Ref = useRef(null);
-  // const line2Ref = useRef(null);
-  // const line3Ref = useRef(null);
-  // const line4Ref = useRef(null);
+function Loader({
+  onFinish,
+  startDelayMs = 20,
+  minDurationMs = 1200,
+  tickIntervalMs = 30,
+  fallbackMs = 5000,
+  textFadeMs = 1000,
+  overlayFadeMs = 1000,
+}: LoaderProps) {
+  // State
+  const [progress, setProgress] = useState(0);                  // current progress (0-100)
+  const [isTextFading, setIsTextFading] = useState(false);      // 5) animate opacity to 0
+  const [isTextHidden, setIsTextHidden] = useState(false);      // then hide the text node
+  const [isOverlayFading, setIsOverlayFading] = useState(false);// 6) fade out overlay
+
+  // Track when the progress actually started to enforce minDurationMs
+  const startTimeRef = React.useRef<number | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((counter) => {
-        if (counter < 100) {
-          return counter + 1;
-        }
-        clearInterval(interval);
-        reveal();
-        return 100;
-      });
-    }, 15);
+    let done = false;
+    let tick: number | undefined;
 
-    return () => clearInterval(interval);
-  });
+    // 1) optional start delay -> then begin ticking
+    const startDelay: number = window.setTimeout(() => {
+      startTimeRef.current = Date.now();
+      // 2) tick progress up to 95% (final jump to 100 happens after load/minDuration)
+      tick = window.setInterval(() => {
+        setProgress((prev) => (prev < 95 ? prev + 1 : prev));
+      }, tickIntervalMs);
+    }, startDelayMs);
 
-  const reveal = () => {
-    const t1 = gsap.timeline({
-      onComplete: () => {
-        if (onFinish) onFinish();
-        console.log("Completed!");
-      },
-    });
-    t1.to(followRef.current, {
-      width: "100%",
-      delay: 0.5,
-      duration: 1.2,
-      ease: "Power3.easeInOut",
-    })
-      .to(counterRef.current, {
-        opacity: 0,
-        duration: 0.4,
-      })
-      .to(counterRef.current, {
-        display: "none",
-        duration: 0.1,
-      })
-      .to(followRef.current, {
-        height: "100%",
-        top: "0%",
-        duration: 1.0,
-        ease: "Power3.easeInOut",
-      })
-      .to(followRefTwo.current, {
-        height: "100%",
-        width: "100%",
-        top: "0%",
-        duration: 0.01,
-        // ease: "Power3.easeInOut",
-      })
-      .to(progressBarRef.current, {
-        display: "none",
-      })
-      .to(followRef.current, {
-        width: "0%",
-        top: "0%",
-        duration: 1,
-        delay: 0.2,
-        ease: "Power3.easeInOut",
-      })
-      .to(followRefTwo.current, {
-        width: "0%",
-        top: "0%",
-        duration: 0.3,
-        ease: "Power4.out",
-      })
-      .to(loadRef.current, {
-        opacity: 0,
-        display: "none",
-        duration: 0.01,
-      })
-      .to(mainLoadRef.current, {
-        opacity: 0,
-        display: "none",
-        duration: 0.3,
-        ease: "Power4.out",
-      });
-    // .to(contentLinesRef.current, {
-    //   opacity: 1,
-    //   duration: 0.5,
-    //   ease: "Power3.easeInOut",
-    // })
-    // .to(line1Ref.current, {
-    //   opacity: 1,
-    //   y: 0,
-    //   duration: 0.8,
-    //   ease: "Power3.easeOut",
-    // })
-    // .to(
-    //   line2Ref.current,
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: 0.8,
-    //     ease: "Power3.easeOut",
-    //   },
-    //   "-=0.4"
-    // )
-    // .to(
-    //   line3Ref.current,
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: 0.8,
-    //     ease: "Power3.easeOut",
-    //   },
-    //   "-=0.4"
-    // )
-    // .to(
-    //   line4Ref.current,
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     duration: 0.8,
-    //     ease: "Power3.easeOut",
-    //   },
-    //   "-=0.4"
-    // );
-  };
+    // Complete on window load
+    const handleLoad = () => {
+      if (done) return;
+      const startedAt = startTimeRef.current ?? Date.now();
+      const elapsed = Date.now() - startedAt;
+      const waitMore = Math.max(0, minDurationMs - elapsed);
+
+      // 3) ensure minimum visible duration before finalizing
+      window.setTimeout(() => {
+        setProgress(100);            // 4) reach 100%
+        setIsTextFading(true);       // 5a) start text fade-out
+        window.setTimeout(() => {
+          setIsTextHidden(true);     // 5b) remove text from layout/ARIA
+          setIsOverlayFading(true);  // 6a) fade overlay
+          window.setTimeout(() => {
+            if (onFinish) onFinish(); // 6b) signal completion
+          }, overlayFadeMs);
+        }, textFadeMs);
+      }, waitMore);
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad, { once: true });
+    }
+
+    // Hard timeout fallback (safety) — completes even if 'load' never fires
+    const fallback = window.setTimeout(() => {
+      if (done) return;
+      setProgress(100);
+      setIsTextFading(true);        // fade text
+      window.setTimeout(() => {
+        setIsTextHidden(true);      // hide text
+        setIsOverlayFading(true);   // fade overlay
+        window.setTimeout(() => {
+          if (onFinish) onFinish(); // finish
+        }, overlayFadeMs);
+      }, textFadeMs);
+    }, fallbackMs);
+
+    return () => {
+      done = true;
+      if (tick) window.clearInterval(tick);       // clear ticking
+      if (startDelay !== undefined) window.clearTimeout(startDelay); // clear start delay
+      window.clearTimeout(fallback);               // clear fallback
+      window.removeEventListener("load", handleLoad);
+    };
+  }, [onFinish, startDelayMs, minDurationMs, tickIntervalMs, fallbackMs, textFadeMs, overlayFadeMs]);
+
   return (
-    <div ref={mainLoadRef} className="w-screen h-screen relative text-center overflow-hidden">
-      {/* content - placed first so it's behind the loading div */}
-      {/* <div className="h-full w-full absolute top-0 left-0 bg-[#0b0b0b] flex items-center justify-center z-0">
-        <div
-          ref={contentLinesRef}
-          className="flex flex-col items-center justify-center space-y-4 opacity-0"
-        >
-          <p
-            ref={line1Ref}
-            className="text-lines text-[50px] opacity-0 translate-y-8"
-          >
-            the greated Glory in living lies,
-          </p>
-          <p
-            ref={line2Ref}
-            className="text-lines text-[50px] opacity-0 translate-y-8"
-          >
-            not in never falling,
-          </p>
-          <p
-            ref={line3Ref}
-            className="text-lines text-[50px] opacity-0 translate-y-8"
-          >
-            but in rising every time we fall
-          </p>
-          <p
-            ref={line4Ref}
-            className="text-lines text-[30px] opacity-0 translate-y-8"
-          >
-            -Nelson Mandela
-          </p>
+    <div
+      className="fixed inset-0 z-[9999] flex items-end-safe justify-center bg-[#000000]"
+      style={{
+        opacity: isOverlayFading ? 0 : 1,                  // 6a) overlay fades when true
+        transition: `opacity ${overlayFadeMs}ms ease-out`,      // sync with overlayFadeMs
+      }}
+    >
+      <div className="w-[60%] h-20 max-w-[520px]">
+        <div className="h-[6px] w-full bg-[#000] rounded-full overflow-hidden">
+          <div
+            className="h-full bg-[#7300FF] transition-[width] duration-150 ease-out"
+            style={{ width: `${progress}%` }}
+          />
         </div>
-      </div> */}
-
-      {/* loading - placed second so it's in front of the content div */}
-      <div
-        ref={loadRef}
-        className="w-full h-full bg-[#0b0b0b] absolute top-0 left-0 z-10"
-      >
-        {/* follow2 */}
-        <div
-          ref={followRefTwo}
-          className="h-[4px] bg-white absolute left-0 top-1/2 flex justify-center items-center z-30"
-        ></div>
-        {/* follow */}
-        <div
-          ref={followRef}
-          // className="h-[4px] bg-radial-[at_100%_50%] from-[#fff200] via-[#ff7300] to-[#c402ce] to-90% absolute left-0 top-1/2 flex justify-center items-center z-40"
-           className="h-[4px] bg-linear-to-r from-[#2F0069] from-0%  to-[#7300FF] to-100% absolute left-0 top-1/2 flex justify-center items-center z-40"
-        ></div>
-
-        {/* ProgressBar */}
-        <div
-          ref={progressBarRef}
-          className="h-[4px] bg-[#fff] absolute left-0 top-1/2 flex justify-center items-center z-20"
-          style={{ width: `${counter}%` }}
-        ></div>
-
-        {/* counter */}
-        <p
-          ref={counterRef}
-          className={`absolute text-[40px] ${oswald.className} tracking-tight left-1/2 top-5/6 text-white font-medium`}
-        >
-          {counter}%
-        </p>
+        {/* Percentage text: fades first, then gets hidden */}
+        {!isTextHidden && (
+          <div
+            className="text-center text-white text-sm mt-3"
+            style={{
+              opacity: isTextFading ? 0 : 1,            // 5a) opacity animated
+              transition: `opacity ${textFadeMs}ms ease`,// sync with textFadeMs
+            }}
+          >
+            {progress}%
+          </div>
+        )}
       </div>
     </div>
   );

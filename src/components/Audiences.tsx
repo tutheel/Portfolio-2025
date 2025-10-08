@@ -2,15 +2,25 @@
 import React from "react";
 
 type Props = {
-  text: string; // e.g., "for Everyone"
+  text: string;
+  active?: boolean;
+  onClick?: () => void;
 };
 
-function Audiences({ text }: Props) {
+export default function Audiences({ text, active = false, onClick }: Props) {
   return (
-    <h1 className="font-medium text-lg text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={[
+        "px-4 py-2 rounded-4xl text-sm transition border",
+        active
+          ? "bg-white text-[#7300FF] border-[#7300FF]"
+          : "bg-transparent text-white hover:text-[#9A48FF] border-white/20 hover:border-[#9A48FF]"
+      ].join(" ")}
+    >
       {text}
-    </h1>
+    </button>
   );
 }
-
-export default Audiences;

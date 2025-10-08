@@ -9,7 +9,11 @@ export default function Home() {
 
   return (
     <>
-      {loading ? <Loader onFinish={() => setLoading(false)} /> : <Content />}
+      {/* Render content underneath so assets load during the loader */}
+      <div aria-hidden={loading} className={loading ? "opacity-0 pointer-events-none select-none" : "opacity-100"}>
+        <Content />
+      </div>
+      {loading && <Loader onFinish={() => setLoading(false)} />}
 
       {/* <Content /> */}
       {/* <Hero /> */}

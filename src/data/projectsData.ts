@@ -12,8 +12,8 @@ export type Project = {
 
 const projectData: Project[] = [
   {
-    id: "veda-janani",
-    title: "Veda Janani",
+    id: "ved-janani",
+    title: "Ved Janani",
     subtitle: "Fullstack Educational Website",
     description:
       "This project is a blend of thoughtful design and functional development, crafted to be both intuitive and reliable.",

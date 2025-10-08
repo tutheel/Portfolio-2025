@@ -26,7 +26,7 @@ const Experience = () => {
           My Journey So Far...
         </h1>
         {/* Content */}
-        <div className={` w-full ${inter.className} px-40 pt-10`}>
+        <div className={` w-full ${inter.className} px-40 pt-10 tracking-tight`}>
           {/* experience - 1 */}
           <div className="h-[3px] w-full bg-[#2d0064]"></div>
           <div className="flex justify-around py-4" data-snap-anchor>

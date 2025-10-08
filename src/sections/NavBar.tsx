@@ -1,65 +1,61 @@
 "use client";
 import React from "react";
-import { Oswald } from "next/font/google";
+import Link from "next/link";
+import { Inter } from "next/font/google";
 
-const oswald = Oswald({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+// const oswald = Oswald({
+//   weight: ["200", "300", "400", "500", "600", "700"],
+//   subsets: ["latin"],
+//   variable: "--font-geist-mono",`
+// });
 // const poppins = Poppins({
 //   weight: ["200", "300", "400", "500", "600", "700"],
 //   subsets: ["latin"],
 //   variable: "--font-geist-mono",
 // });
+const inter = Inter({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "greek-ext",
+  ],
+});
 
 function NavBar() {
   return (
-    <div className="w-full h-[5svh] pl-2 pr-2 invert flex flex-row items-center justify-between upppercase">
+    <div className="w-full h-[5svh] flex items-center justify-between">
       <div
-        className={`w-1/2 text-2xl font-bold  ${oswald.className} upppercase tracking-tight`}
+        className={` w-full bg-black mx-100 mt-4 py-2 px-8 rounded-lg text-2xl font-bold ${inter.className} flex flex-row items-center justify-between text-center border-2 border-[#32006e] shadow-[0_20px_35px_rgba(0,0,0,0.25)]`}
       >
-        SUSHIL
-      </div>
-      <div
-        className={`w-1/2 text-2xl font-bold  ${oswald.className} tracking-tighter flex flex-row items-center justify-between `}
-      >
-        <a href="#home" className="text-xl font-medium tracking-normal uppercase">
+        <Link href="#home" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_2px_5px_rgba(118, 109, 255, 0.5)] text-sm font-extralight">
           Home
-        </a>
-        <a href="#about" className="text-xl font-medium tracking-normal uppercase">
+        </Link>
+        <Link href="#about" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
           About
-        </a>
-        <a href="#skills" className="text-xl font-medium tracking-normal uppercase">
-          Skills
-        </a>
-        <a href="#services" className="text-xl font-medium tracking-normal uppercase">
-          Services
-        </a>
-        <a href="#projects" className="text-xl font-medium tracking-normal uppercase">
+        </Link>
+        <Link href="#experience" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
+          Experience
+        </Link>
+        <Link href="#projects" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
           Projects
-        </a>
-        <a href="#contact" className="text-xl font-medium tracking-normal uppercase">
-          Contact
-        </a>
-      </div>
-      {/* <div className="w-[10vw] h-[5svh] flex items-center justify-center">
-      </div> */}
-      {/* <div className="text-2xl font-bold invert">SUSHIL</div>
-      <div className="flex space-x-4">
-        <a href="#home" className="text-lg text-[#000000] hover:text-[#007bff]">
-          Home
-        </a>
-        <a href="#about" className="text-lg text-[#000000] hover:text-[#007bff]">
-          About
-        </a>
-        <a href="#services" className="text-lg text-[#000000] hover:text-[#007bff]">
+        </Link>
+        <Link href="#skills" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
+          Skills
+        </Link>
+        <Link href="#services" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
           Services
-        </a>
-        <a href="#contact" className="text-lg text-[#000000] hover:text-[#007bff]">
+        </Link>
+        <Link href="/artworks" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
+          Artworks
+        </Link>
+        <Link href="#contact" className="text-zinc-400 hover:text-white transition ease-in-out duration-500 hover:shadow-[0_5px_0px_rgba(115, 0, 255, 0.5)] text-sm font-extralight">
           Contact
-        </a>
-      </div> */}
+        </Link>
+      </div>
     </div>
   );
 }

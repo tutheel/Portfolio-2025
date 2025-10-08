@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-// import NavBar from "./NavBar";
 import Hero from "./Hero";
 import About from "./About";
 import Skills from "./Skills";
@@ -11,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Experience from "./Experience";
 import Footer from "./Footer";
 import Projects from "./Projects";
+import NavBar from "./NavBar";
 gsap.registerPlugin(CSSPlugin, ScrollTrigger);
 
 function Content() {
@@ -147,31 +147,31 @@ function Content() {
   return (
     <div className="relative scrollbar-none">
       {/* Navbar on top */}
-      {/* <div ref={navBarRef} className="fixed invert top-0 left-0 w-full z-50 opacity-0">
+      <div ref={navBarRef} className="fixed top-0 left-0 w-full z-50 opacity-0">
         <NavBar />
-      </div> */}
+      </div>
 
       {/* Hero behind Navbar */}
       <div ref={homePageRef} className="relative z-10">
-        <section data-snap-section className="min-h-screen">
+        <section id="home" data-snap-section className="min-h-screen">
           <Hero />
         </section>
-        <section data-snap-section className="min-h-screen">
+        <section id="about" data-snap-section className="min-h-screen">
           <About />
         </section>
-        <section data-snap-section data-snap-long className="min-h-screen">
+        <section id="experience" data-snap-section data-snap-long className="min-h-screen">
           <Experience/>
         </section>
-        <section data-snap-section className="min-h-screen">
+        <section id="projects" data-snap-section className="min-h-screen">
           <Projects/>
         </section>
-        <section data-snap-section className="min-h-screen">
+        <section id="skills" data-snap-section className="min-h-screen">
           <Skills />
         </section>
-        <section data-snap-section className="min-h-screen">
+        <section id="services" data-snap-section className="min-h-screen">
           <Services />
         </section>
-        <section data-snap-section className="min-h-screen">
+        <section id="contact" data-snap-section className="min-h-screen">
           <Footer/>
         </section>
       </div>
