@@ -4,7 +4,7 @@ import VantaBackground from "@/components/VantaBackground";
 import Audiences from "@/components/Audiences";
 // import SecondaryTitle from "@/components/SecondaryTitle";
 import ProfilePicture from "@/components/ProfilePicture";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 import { Inter } from "next/font/google";
 import AnimatedText from "@/components/AnimatedText";
 
