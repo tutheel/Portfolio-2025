@@ -93,7 +93,7 @@ function Footer() {
           className={`${inter.className} flex flex-row justify-between px-8 capitalize`}
         >
           <h1> &#169; 2025 Sushil. all rights reserved</h1>
-          <h1 className="text-gray-400"> Last Updated - July 28, 2025 at 6:24PM IST+5</h1>
+          <h1 className="text-gray-400"> Last Updated - Oct 18, 2025 at 11:50PM IST+5</h1>
           <h1>website still under development</h1>
         </div>
       </div>

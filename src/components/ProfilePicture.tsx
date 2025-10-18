@@ -17,13 +17,13 @@ const inter = Inter({
 
 function ProfilePicture() {
   return (
-    <div className="w-90 h-120 bg-white mt-30 ml-10 p-2 rounded-2xl shadow-xl/50 text-center items-center rotate-12 hover:rotate-0 transition ease-in-out duration-700">
-      <div className="w-full h-14/16 relative overflow-hidden bg-radial-[at_50%_0%] from-[#2F0069] from-20% to-[#110130] to-95% rounded-2xl">
+    <div className="w-90 h-120 bg-white p-0.5 rounded-2xl shadow-xl/50 text-center items-center rotate-12 hover:rotate-0 transition ease-out duration-700">
+      <div className="w-full h-14/16 relative overflow-hidden bg-radial-[at_50%_0%] from-[#38007c] from-28% to-[#110130] to-65% rounded-2xl">
         <Image
           src="/Sushil.png"
           alt="Sushil"
-          width={600}
-          height={800}
+          width={1200}
+          height={1600}
           className="max-w-full h-auto object-cover"
           sizes="(max-width: 768px) 90vw, 20vw"
           priority

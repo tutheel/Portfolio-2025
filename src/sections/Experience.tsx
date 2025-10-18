@@ -17,7 +17,7 @@ const inter = Inter({
 const Experience = () => {
   return (
     <>
-      <section className="w-full h-[250svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
+      <section className="w-full h-[220svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
         {/* heading */}
         <h1
           data-snap-anchor
@@ -30,10 +30,10 @@ const Experience = () => {
           {/* experience - 1 */}
           <div className="h-[3px] w-full bg-[#2d0064]"></div>
           <div className="flex justify-around py-4" data-snap-anchor>
-            <h1 className="w-[25%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            <h1 className="w-[15%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
               Accenture
             </h1>
-            <div className="w-[25%]">
+            <div className="w-[20%] px-5">
               <h1 className="font-normal text-lg text-[#7300FF]">
                 Software Engineer
               </h1>
@@ -41,8 +41,8 @@ const Experience = () => {
                 Dec 2024 - Present
               </h1>
             </div>
-            <h1 className="w-[50%]">
-              <ul className="font-normal list-disc list-outside">
+            <div className={`${inter.className} tracking-normal w-[65%]`}>
+              <ul className="font-light list-disc list-outside">
                 <li>
                   Engineered a scalable, serverless workflow orchestration
                   system to asynchronously process insurance document operations
@@ -92,15 +92,15 @@ const Experience = () => {
                   <b>TechStack:</b> Typescript, Node, AWS
                 </li>
               </ul>
-            </h1>
+            </div>
           </div>
           {/* experience - 2 */}
           <div className="h-[3px] w-full bg-[#2d0064]"></div>
           <div className="flex justify-around py-4" data-snap-anchor>
-            <h1 className="w-[25%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
+            <h1 className="w-[15%] font-medium text-xl text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
               Accenture
             </h1>
-            <div className="w-[25%]">
+            <div className="w-[20%] px-5">
               <h1 className="font-normal text-lg text-[#7300FF]">
                 Associate Software Engineer
               </h1>
@@ -108,8 +108,8 @@ const Experience = () => {
                 Dec 2022 - Nov 2024
               </h1>
             </div>
-            <h1 className="w-[50%]">
-              <ul className="font-normal list-disc list-outside">
+            <h1 className={`${inter.className} tracking-normal w-[65%]`}>
+              <ul className="font-light list-disc list-outside">
                 <li>
                   Built a serverless rating service using AWS Lambda to support
                   the Rate process in the insurance lifecycle (Rate, Quote,

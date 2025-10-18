@@ -43,7 +43,7 @@ const projectData: Project[] = [
   },
   {
     id: "graphene-supercap",
-    title: "Graphene Supercapacitor",
+    title: "Supercapacitor",
     subtitle: "Cyclic Voltammetry Visualizer",
     description:
       "Data app to visualize CV curves and compute key electrochemical metrics from lab exports.",

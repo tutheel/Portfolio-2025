@@ -27,7 +27,7 @@ export default function VantaBackground() {
       baseColor: 0x0,
       blurFactor: 0.75,
       speed: 1.5,
-      zoom: 0.23,
+      zoom: 0.53,
     });
 
     return () => {
