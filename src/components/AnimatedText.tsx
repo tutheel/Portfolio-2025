@@ -20,7 +20,7 @@ export default function AnimatedText({ text }: { text: string }) {
         y: 0,
         stagger: 0.08,
         ease: "power2.out",
-        duration: 0.45,
+        duration: 0.5,
       });
     }, containerRef);
 

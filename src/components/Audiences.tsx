@@ -14,10 +14,10 @@ export default function Audiences({ text, active = false, onClick }: Props) {
       onClick={onClick}
       aria-pressed={active}
       className={[
-        "px-4 py-2 rounded-4xl text-sm font-medium transition border",
+        "px-4 py-2 rounded-4xl text-sm font-medium transition",
         active
           ? "bg-white text-[#7300FF] border-[#7300FF]"
-          : "bg-transparent text-white hover:text-[#9A48FF] border-white/20 hover:border-[#9A48FF]"
+          : "bg-transparent text-white hover:text-[#9A48FF] border-white/20 hover:border-[#9A48FF] transition ease-out duration-800"
       ].join(" ")}
     >
       {text}

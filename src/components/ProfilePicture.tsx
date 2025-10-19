@@ -17,7 +17,7 @@ const inter = Inter({
 
 function ProfilePicture() {
   return (
-    <div className="w-90 h-120 bg-white p-0.5 rounded-2xl shadow-xl/50 text-center items-center rotate-12 hover:rotate-0 transition ease-out duration-700">
+    <div className="w-90 h-120 bg-white p-2 rounded-2xl shadow-[0_35px_65px_rgba(0,0,0,0.95)] text-center items-center rotate-12 hover:rotate-0 transition ease-out duration-700">
       <div className="w-full h-14/16 relative overflow-hidden bg-radial-[at_50%_0%] from-[#38007c] from-28% to-[#110130] to-65% rounded-2xl">
         <Image
           src="/Sushil.png"

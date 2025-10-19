@@ -20,15 +20,15 @@ const inter = Inter({
 
 function Projects() {
   return (
-    <section className="w-full h-screen bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center">
+    <section className="w-full h-[130svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center justify-center">
       {/* heading */}
       <h1
-        className={`w-full h-[40%] ${inter.className} font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-70% to-[#110130] to-95% bg-clip-text text-[14rem] tracking-tighter text-center px-5`}
+        className={`w-full h-4/10 ${inter.className} font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-70% to-[#110130] to-95% bg-clip-text text-[14.6rem] tracking-tighter text-center py-10`}
       >
         Selected Work
       </h1>
       {/* content */}
-      <div className="w-full h-[60%] flex items-center justify-center gap-10 leading-none">
+      <div className="w-full h-6/10 flex items-start justify-evenly py-10">
         {projectData.map((p) => (
           <ProjectCard key={p.id} project={p} />
         ))}

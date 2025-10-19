@@ -23,18 +23,24 @@ type Props = {
 
 function ProjectCard({ project }: Props) {
   return (
-    <span className="w-75 h-100 rounded-3xl p-8 flex flex-col border-2 border-[#9A48FF] purple-drop bg-purple">
-      <h1 className={`${inter.className} h-[10%] text-left font-semibold text-2xl`}>
+    <span  className="w-75 h-90 rounded-2xl p-8 flex flex-col border-2 border-[#9A48FF] purple-drop bg-purple">
+      <h1
+        className={`${inter.className} h-[10%] text-left font-semibold text-2xl`}
+      >
         {project.title}
       </h1>
       <p className={`${inter.className} h-[30%] text-left font-mono text-sm`}>
         {project.subtitle}
       </p>
 
-      <p className={`${inter.className} h-[35%] text-sm text-gray-400 hover:text-white`}>
+      <p
+        className={`${inter.className} h-[35%] text-sm text-gray-400 hover:text-white`}
+      >
         {project.description}
       </p>
-      <p className={`${inter.className} h-[20%] text-xs text-gray-400 hover:text-white`}>
+      <p
+        className={`${inter.className} h-[20%] text-xs text-gray-400 hover:text-white`}
+      >
         {project.stack.join(", ")}
       </p>
       <div className="h-[5%] flex space-x-2">

@@ -41,29 +41,30 @@ export default function About() {
 
   return (
     <section
-      className={`relative w-full h-[200%] overflow-hidden ${inter.className}`}
+      className={`relative w-full h-[200%] ${inter.className} flex flex-col items-center justify-evenly text-white`}
     >
       {/* Vanta full-bleed background */}
       <VantaBackground />
 
       {/* Foreground content */}
       <div
-        className={`w-full h-full flex flex-col items-center justify-center text-white pt-30`}
+        className={`w-full h-full flex flex-col items-center justify-center text-white`}
       >
-        {/* text */}
+        {/* text "flex flex-col leading-none" */}
         <div className="w-full h-1/2 relative z-10">
           <h1
-            className={`m-0 top-0 leading-[0.8] sm:leading-[0.85] md:leading-[0.9] lg:leading-[0.8] font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-40% via-[#2F0069] via-115% to-[#110130] to-155% bg-clip-text text-[17rem] tracking-tighter text-left px-5 lg:px-20`}
+            // relative m-0 pb-10 top-0
+            className={`font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-40% via-[#2F0069] via-95% to-[#110130] to-155% bg-clip-text text-[17rem] tracking-tighter text-center py-5 lg:py-`}
           >
-            About
+            About Sushil
           </h1>
 
           {/* PUT GRADIENT HERE */}
-          <h1
-            className={`m-0 top-0 leading-[0.8] sm:leading-[0.85] md:leading-[0.9] lg:leading-[0.8] font-bold text-white text-[14rem]  tracking-tighter text-left px-5 lg:px-20`}
+          {/* <h1
+            className={`relative -mt-[5.5rem] font-extrabold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-40% via-[#2F0069] via-115% to-[#110130] to-155% bg-clip-text text-[10rem] tracking-tight text-left px-5 lg:px-20`}
           >
             Sushil
-          </h1>
+          </h1> */}
 
           {/* <div
             className={`h-1/6 w-full flex flex-row items-center justify-between pb-15 px-10`}
@@ -76,9 +77,9 @@ export default function About() {
           </div> */}
         </div>
         {/* image */}
-        <div className="w-full relative z-50 bottom-20 right-35 flex justify-end-safe px-25">
+        {/* <div className="w-full relative z-50 bottom-8 right-35 flex justify-end-safe px-25">
           <ProfilePicture />
-        </div>
+        </div> */}
         {/* text content and toggles */}
         <div className="w-full h-1/2 z-10">
           <div className="w-full h-1/6 px-15 flex flex-col justify-center">
@@ -102,7 +103,7 @@ export default function About() {
             </div>
 
             {/* Dynamic copy */}
-            <div className="h-[18rem] sm:h-[22rem] md:h-[25rem] lg:h-[30rem] text-[3.5rem] leading-17 text-left text-white pb-50 tracking-tight">
+            <div className="h-[18rem] sm:h-[22rem] md:h-[25rem] lg:h-[30rem] text-[3.5rem] leading-13 text-left text-white pb-50 tracking-tight">
               {/* <AnimatePresence mode="wait">
                 <motion.div
                   key={audience}

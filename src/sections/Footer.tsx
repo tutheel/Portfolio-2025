@@ -33,9 +33,9 @@ function Footer() {
         </div>
 
         {/* right half */}
-        <div className="w-1/2 h-full px-20 pt-40">
+        <div className="w-1/2 h-full px-20 pt-40 text-white">
           {/* Email */}
-          <div className="pb-5">
+          <div className="pb-10">
             <h1
               className={`${inter.className} text-md opacity-80 capitalize`}
             >
@@ -49,7 +49,7 @@ function Footer() {
             </a>
           </div>
           {/* Phone */}
-          <div className="pb-5">
+          <div className="pb-10">
             <h1
               className={`${inter.className} text-md opacity-80 capitalize`}
             >
@@ -63,7 +63,7 @@ function Footer() {
             </a>
           </div>
           {/* Social */}
-          <div className="pb-5">
+          <div className="pb-10">
             <h1
               className={`${inter.className} text-md opacity-80 capitalize`}
             >
@@ -83,7 +83,7 @@ function Footer() {
         </div>
       </div>
       <div className="w-full h-[20svh] font-light text-sm pt-10">
-        <div className={`${inter.className} text-center py-5 capitalize`}>
+        <div className={`${inter.className} text-center py-2 mt-5 capitalize`}>
           <h1 className="text-md">
             Designed & Developed by Sushil
           </h1>
@@ -93,7 +93,7 @@ function Footer() {
           className={`${inter.className} flex flex-row justify-between px-8 capitalize`}
         >
           <h1> &#169; 2025 Sushil. all rights reserved</h1>
-          <h1 className="text-gray-400"> Last Updated - Oct 18, 2025 at 11:50PM IST+5</h1>
+          <h1 className="text-gray-400"> Last Updated - Oct 19, 2025 at 11:31PM IST+5</h1>
           <h1>website still under development</h1>
         </div>
       </div>
