@@ -1,5 +1,5 @@
 "use client";
-import SecondaryTitle from "@/components/SecondaryTitle";
+// import SecondaryTitle from "@/components/SecondaryTitle";
 import ServiceCard from "@/components/ServiceCard";
 import servicesData from "@/data/servicesData";
 import { Inter } from "next/font/google";

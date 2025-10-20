@@ -102,7 +102,7 @@ function Loader({
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-end-safe justify-center bg-[#000000]"
+      className="fixed inset-0 z-[9999] flex items-end-safe justify-center bg-[#000]"
       style={{
         opacity: isOverlayFading ? 0 : 1,                  // 6a) overlay fades when true
         transition: `opacity ${overlayFadeMs}ms ease-out`,      // sync with overlayFadeMs

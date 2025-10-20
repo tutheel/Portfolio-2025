@@ -1,6 +1,7 @@
 "use client";
 import DesignOrbs from "@/components/DesignOrbs";
 import { Inter } from "next/font/google";
+import { useLayoutEffect } from "react";
 // import { useEffect, useRef } from "react";
 // import { gsap, CSSPlugin } from "gsap";
 // import { useEffect, useRef, useState } from "react";
@@ -43,6 +44,26 @@ const currentDate = () => {
 
 function Hero() {
   const { day, month, year } = currentDate();
+
+  useLayoutEffect(() => {
+      // if (!homePageRef.current || !navBarRef.current) return;
+  
+      // const ctx = gsap.context(() => {
+      //   // Ensure starting state (don’t rely on Tailwind classes for animation start)
+      //   gsap.set([homePageRef.current, navBarRef.current], { opacity: 0 });
+  
+      //   const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+      //   tl.to(homePageRef.current, { opacity: 1, duration: 1 })
+      //     // start navbar slightly before the previous finishes
+      //     .to(
+      //       navBarRef.current,
+      //       { opacity: 1, duration: 1.2, delay: 0.2 },
+      //       "-=0.4"
+      //     );
+      // });
+  
+      // return () => ctx.revert();
+    });
 
   // const [isOpen, setIsOpen] = useState(false);
   // const menuRef = useRef<HTMLDivElement>(null);
@@ -128,7 +149,7 @@ function Hero() {
   // };
 
   return (
-    <section className="w-full h-screen bg-radial-[at_50%_160%] from-[#240051]  to-[#000000] to-60%">
+    <section className="w-full h-screen bg-radial-[at_50%_160%] from-[#240051] to-[#000000] to-60%">
       {/* hero head */}
       <div className="relative w-full h-11/12">
         {/* text */}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Inter } from "next/font/google";
 import developerSkills from "@/data/developerSkills";
 import designerSkills from "@/data/designerSkills";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const inter = Inter({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
