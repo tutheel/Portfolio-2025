@@ -34,12 +34,12 @@ function ProjectCard({ project }: Props) {
       </p>
 
       <p
-        className={`${inter.className} h-[35%] text-sm text-gray-400 hover:text-white`}
+        className={`${inter.className} h-[35%] text-sm text-white lg:text-gray-400 lg:hover:text-white`}
       >
         {project.description}
       </p>
       <p
-        className={`${inter.className} h-[20%] text-xs text-gray-400 hover:text-white`}
+        className={`${inter.className} h-[20%] text-xs text-white lg:text-gray-400 lg:hover:text-white`}
       >
         {project.stack.join(", ")}
       </p>

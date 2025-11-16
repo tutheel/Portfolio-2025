@@ -28,64 +28,48 @@ function Skills() {
     activeTab === "developer" ? developerSkills : designerSkills;
   return (
     <>
-      <section className="w-full h-[140svh] bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center justify-center">
+      <section className="w-full max-h-max bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center justify-center">
         {/* top */}
         <div className="w-full h-4/12">
           <h1
-            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_25%] from-[#7300FF] from-35% via-[#2F0069] via-70% to-[#110130] to-90% bg-clip-text text-[16.5rem] tracking-tighter text-center`}
+            className={`${inter.className} leading-none font-bold text-transparent bg-radial-[at_50%_25%] from-[#7300FF] from-35% via-[#2F0069] via-70% to-[#110130] to-90% bg-clip-text text-[6.5rem] lg:text-[16.5rem] tracking-tighter text-center py-20 lg:py-15`}
           >
             Skills & Tools
           </h1>
-          <div
-            className={`w-full ${inter.className} flex flex-row items-center justify-between px-10`}
-          >
-            <h1 className="font-light text-sm text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
-              for Everyone
-            </h1>
-            <h1 className="font-light text-sm text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
-              Recruiters
-            </h1>
-            <h1 className="font-light text-sm text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
-              Collaborators
-            </h1>
-            <h1 className="font-light text-sm text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
-              Collaborators
-            </h1>
-            <h1 className="font-light text-sm text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text">
-              Collaborators
-            </h1>
-          </div>
+          {/* <h1 className="font-light text-xs text-center text-gray-400">
+            Select a skill to view
+          </h1> */}
         </div>
 
         {/* content */}
         <div
-          className={`w-full ${inter.className} h-2/12 flex flex-row items-center justify-evenly px-100`}
+          className={`w-full ${inter.className} h-2/12 flex flex-row items-center justify-evenly pb-10 lg:px-100`}
         >
           <button
             onClick={() => setActiveTab("developer")}
-            className={`cursor-pointer font-medium text-3xl pb-5 transition-all duration-1000 ${
+            className={`cursor-pointer font-medium  text-2xl lg:text-3xl pb-5 transition-all duration-1000 ${
               activeTab === "developer"
                 ? "text-white"
-                : "text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text"
+                : "text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text opacity-50"
             }`}
           >
-            Developer
+            Developer Skills
           </button>
           <button
             onClick={() => setActiveTab("designer")}
-            className={`cursor-pointer font-medium text-3xl pb-5 transition-all duration-1000 ${
+            className={`cursor-pointer font-medium  text-2xl lg:text-3xl pb-5 transition-all duration-1000 ${
               activeTab === "designer"
                 ? "text-white"
-                : "text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text"
+                : "text-transparent bg-gradient-to-b from-[#7300FF] from-40%  to-[#2F0069] to-100% bg-clip-text opacity-50"
             }`}
           >
-            Designer
+            Designer Skills
           </button>
         </div>
 
         {/* bottom */}
         <div
-          className={`${inter.className} w-full h-4/12 text-left flex justify-center `}
+          className={`${inter.className} w-full h-4/12 text-left grid grid-cols-2 lg:flex lg:justify-center`}
         >
           {Object.entries(skills).map(([category, skillList]) => (
             <motion.div

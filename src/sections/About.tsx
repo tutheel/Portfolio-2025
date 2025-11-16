@@ -41,7 +41,7 @@ export default function About() {
 
   return (
     <section
-      className={`relative w-full h-[200%] ${inter.className} flex flex-col items-center justify-evenly text-white`}
+      className={`relative w-full max-h-min ${inter.className} flex flex-col items-center justify-evenly text-white `}
     >
       {/* Vanta full-bleed background */}
       <VantaBackground />
@@ -54,7 +54,7 @@ export default function About() {
         <div className="w-full h-1/2 relative z-10">
           <h1
             // relative m-0 pb-10 top-0
-            className={`font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-40% via-[#2F0069] via-95% to-[#110130] to-155% bg-clip-text text-[17rem] tracking-tighter text-center py-5 lg:py-`}
+            className={`font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-40% via-[#2F0069] via-95% to-[#110130] to-155% bg-clip-text text-[7.5rem] lg:text-[17rem] tracking-tighter text-center py-2 leading-[0.85] lg:leading-[0.9] pt-10 lg:pt-30 lg:pb-10`}
           >
             About Sushil
           </h1>
@@ -81,10 +81,10 @@ export default function About() {
           <ProfilePicture />
         </div> */}
         {/* text content and toggles */}
-        <div className="w-full h-1/2 z-10">
-          <div className="w-full h-1/6 px-15 flex flex-col justify-center">
+        <div className="w-full h-1/2 z-10 pt-0 mb-25 lg:mb-0 mt-10 lg:mt-0">
+          <div className="w-full px-15 pt-4 lg:pt-0 flex flex-col justify-center">
             {/* Toggle buttons */}
-            <div className="w-2/6 flex flex-row justify-between pb-20">
+            <div className="w-2/6 flex flex-row justify-between items-center-safe lg:items-ce space-x-2 lg:space-x-0 pb-2 lg:pb-20">
               <Audiences
                 text="For Everyone"
                 active={audience === "everyone"}
@@ -103,7 +103,7 @@ export default function About() {
             </div>
 
             {/* Dynamic copy */}
-            <div className="h-[18rem] sm:h-[22rem] md:h-[25rem] lg:h-[30rem] text-[3.5rem] leading-13 text-left text-white pb-50 tracking-tight">
+            <div className="h-[18rem] sm:h-[22rem] md:h-[25rem] lg:h-[30rem] leading-8 text-left lg:leading-13 text-white tracking-tight pt-4 lg:pt-0">
               {/* <AnimatePresence mode="wait">
                 <motion.div
                   key={audience}
@@ -116,6 +116,7 @@ export default function About() {
                 </motion.div>
               </AnimatePresence> */}
               <AnimatedText text={TEXT_BY_AUDIENCE[audience]} />
+              {/* <h1>sushil</h1> */}
             </div>
           </div>
         </div>

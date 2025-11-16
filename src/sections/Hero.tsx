@@ -151,16 +151,16 @@ function Hero() {
   return (
     <section className="w-full h-screen bg-radial-[at_50%_160%] from-[#240051] to-[#000000] to-60%">
       {/* hero head */}
-      <div className="relative w-full h-11/12">
+      <div className="relative w-full h-10/12 lg:h-11/12">
         {/* text */}
-        <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center z-10 pt-20 text-center">
+        <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center z-10 pt-30 text-center">
           <h1
             className={`${inter.className} text-white text-5xl font-light tracking-tighter`}
           >
             Hello I&apos;m
           </h1>
           <h1
-            className={`${inter.className} text-white text-[17vh] font-normal tracking-tighter leading-none`}
+            className={`${inter.className} text-white text-7xl lg:text-[17vh] font-normal tracking-tighter leading-none`}
           >
             Sushil Patil
           </h1>
@@ -174,7 +174,7 @@ function Hero() {
           </h1>
         </div>
         {/* design */}
-        <div className="relative w-full h-11/12 top-12 blur-[1px]">
+        <div className="lg:relative lg:w-full lg:h-11/12 lg:top-12 lg:blur-[1px]">
           {/* text block … your existing content … */}
           {/* design layer behind the text */}
           <DesignOrbs />
@@ -182,12 +182,14 @@ function Hero() {
       </div>
 
       {/* hero footer */}
-      <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center text-sm text-center">
-        <div className="mb-2 mt-5 pl-5 text-white lg:mt-0 font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
+      <div className="w-full h-2/12 lg:h-1/12 flex flex-row justify-between items-center text-sm text-center mt-2 lg:mt-0">
+        <div className="pl-5 text-white lg:mt-0 font-light capitalize lg:font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
           {day} {month} {year}
         </div>
-        <div className="mb-2 mt-5 lg:pr-8 lg:mt-0 text-xs cursor-default hover:tracking-widest transform duration-200 ease-in-out">Scroll Down</div>
-        <div className="mb-2 mt-5 text-white lg:mt-0 font-medium">
+        <div className="pr-8 lg:mt-0 text-xs cursor-default hover:tracking-widest transform duration-200 ease-in-out">
+          Scroll Down
+        </div>
+        <div className="text-white lg:mt-0 font-light capitalize lg:font-medium">
           <a
             className="transition-colors pr-5 duration-500 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_0px_5px_#7327ff]"
             href="https://drive.google.com/file/d/1xkftIym2MHkAS_7mnB-FWH4oom6gT4eD/view?usp=sharing"

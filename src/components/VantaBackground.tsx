@@ -40,7 +40,11 @@ export default function VantaBackground() {
 
   return (
     <>
-      <div ref={vantaRef} className="absolute inset-0 -z-10 pointer-events-none"></div>
+      {/* Force the Vanta canvas to stretch to full viewport height, even on mobile */}
+      <div
+        ref={vantaRef}
+        className="absolute inset-0 -z-10 h-full w-full min-h-[100svh] pointer-events-none"
+      ></div>
     </>
   );
 }

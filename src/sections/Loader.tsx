@@ -118,7 +118,7 @@ function Loader({
         {/* Percentage text: fades first, then gets hidden */}
         {!isTextHidden && (
           <div
-            className="text-center text-white text-sm mt-3"
+            className="text-center text-white text-2xl lg:text-lg mt-3"
             style={{
               opacity: isTextFading ? 0 : 1,            // 5a) opacity animated
               transition: `opacity ${textFadeMs}ms ease`,// sync with textFadeMs

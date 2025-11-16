@@ -66,7 +66,7 @@ function Content() {
 
   return (
     <div className="relative scrollbar-none">
-      {/* Navbar on top */}
+      {/* Navbar on top  */}
       <div ref={navBarRef} className="fixed top-0 left-0 w-full z-50">
         <NavBar />
       </div>

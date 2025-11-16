@@ -31,7 +31,7 @@ export default function AnimatedText({ text }: { text: string }) {
   return (
     <p
       ref={containerRef}
-      className="flex flex-wrap text-[2.5rem] tracking-tight"
+      className="flex flex-wrap text-[1.5rem] lg:text-[2.5rem] tracking-tight"
     >
       {text.split(" ").map((word, i) => (
         <span key={i} className="word minline-block mr-[0.25em]">
