@@ -2,8 +2,7 @@
 import { useState } from "react";
 import Content from "@/pages/Content";
 import Loader from "@/sections/Loader";
-// import Skills from "@/sections/Skills";
-// import Services from "@/sections/Services";
+
 
 
 export default function Home() {

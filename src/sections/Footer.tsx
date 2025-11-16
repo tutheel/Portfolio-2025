@@ -94,7 +94,7 @@ function Footer() {
         >
           <h1> &#169; 2025 Sushil. all rights reserved</h1>
           <h1 className="hidden lg:block lg:text-gray-400">
-            Last Updated - Oct 19, 2025 at 11:31PM IST+5
+            Last Updated - Nov 17, 2025 at 02:31AM IST+5
           </h1>
           <h1 className="hidden lg:block">website still under development</h1>
         </div>
