@@ -183,14 +183,14 @@ function Hero() {
 
       {/* hero footer */}
       <div className="w-full h-1/12 flex flex-col md:flex-row justify-between items-center text-sm text-center">
-        <div className="mb-2 mt-5 pl-5 text-gray-500 lg:mt-0 font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
+        <div className="mb-2 mt-5 pl-5 text-white lg:mt-0 font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
           {day} {month} {year}
         </div>
-        <div className="mb-2 mt-5 lg:pr-8 lg:mt-0 text-xs cursor-default">Scroll Down</div>
-        <div className="mb-2 mt-5 text-gray-500 lg:mt-0 font-medium">
+        <div className="mb-2 mt-5 lg:pr-8 lg:mt-0 text-xs cursor-default hover:tracking-widest transform duration-200 ease-in-out">Scroll Down</div>
+        <div className="mb-2 mt-5 text-white lg:mt-0 font-medium">
           <a
             className="transition-colors pr-5 duration-500 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_0px_5px_#7327ff]"
-            href=""
+            href="https://drive.google.com/file/d/1xkftIym2MHkAS_7mnB-FWH4oom6gT4eD/view?usp=sharing"
           >
             Resume
           </a>

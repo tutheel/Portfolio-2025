@@ -44,7 +44,7 @@ function ProjectCard({ project }: Props) {
         {project.stack.join(", ")}
       </p>
       <div className="h-[5%] flex space-x-2">
-        <Link
+        {/* <Link
           href={project.projectLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -56,7 +56,7 @@ function ProjectCard({ project }: Props) {
             <span>Link</span>
             <FiLink className="inline-block" />
           </button>
-        </Link>
+        </Link> */}
         <Link
           href={project.codeLink}
           target="_blank"

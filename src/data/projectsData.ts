@@ -16,10 +16,30 @@ const projectData: Project[] = [
     title: "Ved Janani",
     subtitle: "Fullstack Educational Website",
     description:
-      "This project is a blend of thoughtful design and functional development, crafted to be both intuitive and reliable.",
-    stack: ["Next.js", "Redux", "Tailwind CSS", "Framer Motion", "AWS"],
-    projectLink: "https://www.google.com",
+      "ved Janani is AWS Serverless educational platform offering courses, quizzes, and interactive content for learners. Under development..",
+    stack: ["Next.js", "AWS", "Clerk", "Tailwind CSS", "Framer Motion"],
+    projectLink: "https://ved-janani.com",
     codeLink: "https://github.com/tutheel/Ved-Janani",
+  },
+  {
+    id: "xpenzi",
+    title: "Xpenzi",
+    subtitle: "AI Expense Management Website",
+    description:
+      "Xpenzi is a Splitwise-inspired SaaS with AI budgeting insights, optimized for serverless AWS and Vercel delivery. Under development..",
+    stack: [
+      "Next.js",
+      "AWS",
+      "shadCn-UI",
+      "prisma",
+      "clerk",
+      "Tailwind CSS",
+      "Framer Motion",
+      "GSAP",
+      "terraform",
+    ],
+    projectLink: "https://xpenzi.com",
+    codeLink: "https://github.com/tutheel/Xpenzi",
   },
   {
     id: "portfolio-site",
@@ -27,30 +47,57 @@ const projectData: Project[] = [
     subtitle: "Interactive Developer & Designer Portfolio",
     description:
       "A personal portfolio focused on motion, accessibility, and responsive design with a clean visual system.",
-    stack: ["Next.js", "Tailwind CSS", "GSAP", "Framer Motion"],
-    projectLink: "https://example.com/portfolio",
+    stack: [
+      "Next.js",
+      "Typescript",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+      "lenis-motion",
+      "Three.js",
+      "Vercel",
+    ],
+    projectLink: "https://tutheel.dev",
     codeLink: "https://github.com/you/portfolio",
   },
   {
-    id: "rating-service",
-    title: "Rating Service",
-    subtitle: "Serverless Insurance Pricing Engine",
+    id: "ochi-design",
+    title: "Ochi-Design",
+    subtitle: "Frontend Project",
     description:
-      "Event-driven architecture using Lambda and DynamoDB; designed for low-latency quote calculations.",
-    stack: ["AWS Lambda", "API Gateway", "DynamoDB", "Node.js", "Terraform"],
-    projectLink: "https://example.com/rating-service",
-    codeLink: "https://github.com/you/rating-service",
-  },
-  {
-    id: "graphene-supercap",
-    title: "Supercapacitor",
-    subtitle: "Cyclic Voltammetry Visualizer",
-    description:
-      "Data app to visualize CV curves and compute key electrochemical metrics from lab exports.",
-    stack: ["Next.js", "Chart.js", "Tailwind CSS"],
-    projectLink: "https://example.com/graphene-supercap",
-    codeLink: "https://github.com/you/graphene-supercap",
+      "Frontend of ochi-design.com. built for Practicing framer motion and GSAP animations.",
+    stack: [
+      "Javascript",
+      "React",
+      "Framer Motion",
+      "Gsap",
+      "Node.js",
+      "Tailwind CSS",
+    ],
+    projectLink: "https://ochi-design.com",
+    codeLink: "https://github.com/tutheel/OCHI_Design",
   },
 ];
 
 export default projectData;
+
+// ,{
+//     id: "TodoApp-ts-frontend",
+//     title: "TodoApp Frontend",
+//     subtitle: "Front End for Todo Application",
+//     description:
+//       "Sleek and modern frontend for a Todo application with task management, and real-time updates.",
+//     stack: ["Typescript", "React.js", "MUI", "tanstack-query", "Axios"],
+//     projectLink: "https://todoapp-frontend-ts.vercel.app/",
+//     codeLink: "https://github.com/tutheel/TODOApp-ts-",
+//   },
+//   {
+//     id: "TodoApp-ts-backend",
+//     title: "TodoApp Backend",
+//     subtitle: "Backend for Todo Application",
+//     description:
+//       "Robust backend for a Todo application featuring task management, and real-time updates using Node.js and Express.",
+//     stack: ["Typescript", "Nodejs", "express", "MySQL", "Axios"],
+//     projectLink: "",
+//     codeLink: "https://github.com/tutheel/TODOApp-ts-",
+//   },
