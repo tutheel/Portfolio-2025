@@ -43,9 +43,9 @@ function Footer() {
             </h1>
             <a
               className={`${inter.className} text-sm transition-colors duration-400 text-[#7a33ff] hover:text-white hover:drop-shadow-[0_0_10px_#7a33ff]`}
-              href="mailto:sushilpatil953825@gmail.com"
+              href="mailto:sushilpatildev@gmail.com"
             >
-              sushilpatil953825@gmail.com
+              sushilpatildev@gmail.com
             </a>
           </div>
           {/* Phone */}

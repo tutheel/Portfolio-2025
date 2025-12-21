@@ -1,6 +1,7 @@
 "use client";
 import DesignOrbs from "@/components/DesignOrbs";
 import { Inter } from "next/font/google";
+import { ChevronDown } from "lucide-react";
 import { useLayoutEffect } from "react";
 // import { useEffect, useRef } from "react";
 // import { gsap, CSSPlugin } from "gsap";
@@ -36,7 +37,9 @@ const currentDate = () => {
   const now = new Date();
 
   const day = now.getDate().toString().padStart(2, "0");
-  const month = now.toLocaleString("en-US", { month: "short" }).toUpperCase(); // e.g. "MAY"
+  const monthRaw = now.toLocaleString("en-US", { month: "short" });
+  const month =
+    monthRaw.charAt(0).toUpperCase() + monthRaw.slice(1).toLowerCase(); // e.g. "May"
   const year = now.getFullYear();
 
   return { day, month, year };
@@ -149,50 +152,63 @@ function Hero() {
   // };
 
   return (
-    <section className="w-full h-screen bg-radial-[at_50%_160%] from-[#240051] to-[#000000] to-60%">
+    <section className="w-full h-screen bg-linear-to-b lg:bg-radial-[at_50%_160%] from-[#240051] to-[#000000] to-60%">
       {/* hero head */}
-      <div className="relative w-full h-10/12 lg:h-11/12">
+      <div className="relative w-full h-11/12 lg:h-11/12">
         {/* text */}
-        <div className="absolute inset-0 w-full h-full flex flex-col justify-center items-center z-10 pt-30 text-center">
+        <div className="absolute inset-0 w-full h-full flex flex-col justify-start lg:justify-center items-center z-10 pt-20 lg:pt-20 text-center">
           <h1
-            className={`${inter.className} text-white text-5xl font-light tracking-tighter`}
+            className={`${inter.className} text-white text-3xl lg:text-5xl font-light tracking-tighter`}
           >
             Hello I&apos;m
           </h1>
           <h1
-            className={`${inter.className} text-white text-7xl lg:text-[17vh] font-normal tracking-tighter leading-none`}
+            className={`${inter.className} text-white text-6xl lg:text-[17vh] font-normal tracking-tighter leading-none`}
           >
             Sushil Patil
           </h1>
-          <h1 className={`${inter.className} text-white text-md font-normal`}>
-            Creative Developer & Designer
+          <h1 className={`${inter.className} text-white text-md lg:text-md font-normal`}>
+            Developer & Designer
           </h1>
           <h1
-            className={`${inter.className} text-gray-400 text-md font-normal`}
+            className={`${inter.className} text-gray-400 text-sm lg:text-md font-normal`}
           >
             From Karnataka, India
           </h1>
         </div>
         {/* design */}
         <div className="lg:relative lg:w-full lg:h-11/12 lg:top-12 lg:blur-[1px]">
-          {/* text block … your existing content … */}
           {/* design layer behind the text */}
           <DesignOrbs />
+        </div>
+        {/* mobile hero image at bottom (show bottom half) */}
+        <div className="absolute inset-x-0 bottom-0 h-full lg:hidden overflow-hidden flex items-end justify-center z-50">
+          <div className="relative">
+            <img
+              src="/Sushil.png"
+              alt="Portrait of Sushil Patil"
+              className="w-100 h-145 object-cover object-bottom -mb-15"
+              loading="lazy"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/100 via-black/10 to-transparent" />
+          </div>
         </div>
       </div>
 
       {/* hero footer */}
-      <div className="w-full h-2/12 lg:h-1/12 flex flex-row justify-between items-center text-sm text-center mt-2 lg:mt-0">
-        <div className="pl-5 text-white lg:mt-0 font-light capitalize lg:font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
-          {day} {month} {year}
+      <div className="relative w-full h-1/12 lg:h-1/12 flex flex-row justify-between items-center text-sm text-center z-100">
+        <div className="pl-5 text-white lg:mt-0 font-light normal-case lg:font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
+          {day}-{month} {year}
         </div>
-        <div className="pr-8 lg:mt-0 text-xs cursor-default hover:tracking-widest transform duration-200 ease-in-out">
-          Scroll Down
+        <div className="pr-6 lg:pr-8 lg:mt-0 text-xs text-white flex items-center justify-center cursor-default hover:tracking-widest transform duration-200 ease-in-out">
+          <ChevronDown className="w-5 h-5" />
         </div>
         <div className="text-white lg:mt-0 font-light capitalize lg:font-medium">
           <a
             className="transition-colors pr-5 duration-500 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_0px_5px_#7327ff]"
-            href="https://drive.google.com/file/d/1xkftIym2MHkAS_7mnB-FWH4oom6gT4eD/view?usp=sharing"
+            href="/Sushils%20Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Resume
           </a>

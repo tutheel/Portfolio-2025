@@ -12,13 +12,13 @@ export default function DesignImagesMasked() {
         "md:-inset-x-[8%] md:-inset-y-[6%]",
         "lg:inset-x-[0%] lg:-inset-y-[8%]",
         // one dial for all responsive sizes (no hard-coded px)
-        "sm:[--d:18rem] md:[--d:22rem] lg:[--d:36rem] xl:[--d:40rem]",
+        "sm:[--d:18rem] md:[--d:22rem] lg:[--d:28rem] xl:[--d:32rem]",
       ].join(" ")}
       aria-hidden="true"
     >
       {/* LEFT EDGE — shows only RIGHT half (all breakpoints) */}
       <div
-        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:45rem]"
+        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:32rem] xl:[--d:36rem]"
         style={{ width: "calc(var(60rem) / 2)", height: "var(--d)" }}
       >
         {/* Inner canvas is full size; we shift it so only the right half is visible */}
@@ -40,7 +40,7 @@ export default function DesignImagesMasked() {
 
       {/* RIGHT EDGE — md+ only: shows only LEFT half */}
       <div
-        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:45rem]"
+        className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden [--d:16rem] md:[--d:20rem] lg:[--d:32rem] xl:[--d:36rem]"
         style={{ width: "calc(var(--d) / 2)", height: "var(--d)" }}
       >
         <div
@@ -68,7 +68,7 @@ export default function DesignImagesMasked() {
           style={{ width: "var(--d)", height: "var(--d)", top: "-50%" }}
         >
           <Image
-            src="/indian.png"
+            src="/Indian_Design.png"
             alt=""
             fill
             className="object-contain animate-[spin_12s_linear_infinite]"
@@ -80,11 +80,11 @@ export default function DesignImagesMasked() {
             style={{
               background:
                 "radial-gradient(circle at 50% 50%, #F0F0F0E6 0.2%, #4C00D8 40%, #060606 100%)",
-              WebkitMaskImage: "url(/indian.png)",
+              WebkitMaskImage: "url(/Indian_Design.png)",
               WebkitMaskRepeat: "no-repeat",
               WebkitMaskPosition: "center",
               WebkitMaskSize: "contain",
-              maskImage: "url(/indian.png)",
+              maskImage: "url(/Indian_Design.png)",
               maskRepeat: "no-repeat",
               maskPosition: "center",
               maskSize: "contain",
