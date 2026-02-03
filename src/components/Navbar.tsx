@@ -24,8 +24,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const handleLogoClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     setIsOpen(false);
   };
 
@@ -36,7 +38,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={handleLogoClick}
-            className={`${inter.className} text-white text-xl font-semibold tracking-tight`}
+            className={`${inter.className} text-white text-2xl font-semibold tracking-tight`}
           >
             Sushil
           </Link>
@@ -48,7 +50,7 @@ export default function Navbar() {
             onClick={() => setIsOpen((prev) => !prev)}
             className="rounded-md p-2 text-white transition hover:text-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-white/60"
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </header>

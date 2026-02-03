@@ -48,17 +48,17 @@ function Content() {
     if (!homePageRef.current || !navBarRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Ensure starting state (don’t rely on Tailwind classes for animation start)
-      gsap.set([homePageRef.current, navBarRef.current], { opacity: 0 });
+      // Show page content immediately — Hero handles its own staggered reveal
+      gsap.set(homePageRef.current, { opacity: 1 });
+      gsap.set(navBarRef.current, { opacity: 0 });
 
-      const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-      tl.to(homePageRef.current, { opacity: 1, duration: 1 })
-        // start navbar slightly before the previous finishes
-        .to(
-          navBarRef.current,
-          { opacity: 1, duration: 1.2, delay: 0.2 },
-          "-=0.4"
-        );
+      // Navbar fades in with a slight delay so the hero gradient appears first
+      gsap.to(navBarRef.current, {
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.5,
+        ease: "power3.inOut",
+      });
     });
 
     return () => ctx.revert();

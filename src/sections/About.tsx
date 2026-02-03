@@ -26,17 +26,16 @@ export default function About() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray<HTMLElement>("[data-reveal-word]");
-      gsap.set(items, { y: 30, opacity: 0 });
 
       gsap.timeline({
         scrollTrigger: {
           trigger: wordsRef.current,
-          start: "top 80%",
+          start: "top 90%",
           toggleActions: "play none none reverse",
         },
-      }).to(items, {
-        y: 0,
-        opacity: 1,
+      }).from(items, {
+        y: 20,
+        autoAlpha: 0,
         duration: 0.6,
         ease: "power3.out",
         stagger: 0.15,
@@ -48,10 +47,10 @@ export default function About() {
 
   return (
     <section
-      className={`relative w-full max-h-min ${inter.className} flex flex-col items-start justify-evenly text-white bg-linear-to-b from-[#240051] to-[#000000] to-60% `}
+      className={`relative w-full max-h-max ${inter.className} flex flex-col items-start justify-evenly text-white bg-[#000000]`}
     >
-      <ScrollRevealLines className="w-full font-semibold text-3xl lg:text-9xl mt-60 mb-50 px-20 tracking-tighter" />
-      <section className="w-full mt-20 mb-40 px-4 md:px-6 lg:pr-30">
+      <ScrollRevealLines className="w-full font-semibold text-4xl lg:text-9xl mt-20 lg:mt-60 lg:mb-50 px-8 lg:px-20 tracking-tighter" />
+      <section className="w-full mt-20 mb-20 lg:mb-40 px-4 md:px-6 lg:pr-30">
         <ScrollRevealParagraphs
           className="px-4 md:px-16 "
           paragraphs={[
@@ -63,16 +62,16 @@ export default function About() {
           gapClasses="gap-8 md:gap-8 lg:gap-8"
         />
       </section>
-      <section ref={wordsRef} className="py-8 mb-10 px-22 flex flex-col items-start justify-center">
+      <section ref={wordsRef} className="py-8 mb-2 lg:mb-10 px-8 lg:px-22 flex flex-col items-start justify-center">
         {[
-          { word: "Design", delay: "-2s" },
-          { word: "Build", delay: "-1s" },
-          { word: "Evolve", delay: "0s" },
+          { word: "Design", delay: "-1s" },
+          { word: "Build", delay: "-0.5s" },
+          { word: "Evolve.", delay: "0s" },
         ].map(({ word, delay }) => (
           <h1
             key={word}
             data-reveal-word
-            className="text-sm md:text-xl lg:text-3xl font-bold tracking-tighter gradient-text-scroll"
+            className="text-2xl md:text-xl lg:text-3xl font-bold tracking-tighter gradient-text-scroll"
             style={{ animationDelay: delay }}
           >
             {word}

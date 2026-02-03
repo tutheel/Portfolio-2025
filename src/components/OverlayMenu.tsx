@@ -64,12 +64,14 @@ export default function OverlayMenu({ isOpen, onClose, toggleRef }: OverlayMenuP
   const socialsRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const rollingRefs = useRef<Array<RollingTextHandle | null>>([]);
+  const socialRollingRefs = useRef<Array<RollingTextHandle | null>>([]);
   const masterTl = useRef<gsap.core.Timeline | null>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
   const [isVisible, setIsVisible] = useState(false);
 
   itemRefs.current.length = menuItems.length;
   rollingRefs.current.length = menuItems.length;
+  socialRollingRefs.current.length = socials.length;
 
   useLayoutEffect(() => {
     if (prefersReducedMotion) return;
@@ -228,7 +230,7 @@ export default function OverlayMenu({ isOpen, onClose, toggleRef }: OverlayMenuP
               window.scrollTo({ top: 0, behavior: "smooth" });
               onClose();
             }}
-            className={`${inter.className} text-white text-xl font-semibold tracking-tight focus:outline-none focus-visible:ring focus-visible:ring-white/60`}
+            className={`${inter.className} text-white text-2xl font-semibold tracking-tight focus:outline-none focus-visible:ring focus-visible:ring-white/60`}
           >
             Sushil
           </Link>
@@ -238,7 +240,7 @@ export default function OverlayMenu({ isOpen, onClose, toggleRef }: OverlayMenuP
             aria-label="Close menu"
             className="inline-flex items-center justify-center rounded-md px-2 text-white focus:outline-none focus-visible:ring focus-visible:ring-white/60"
           >
-            <X size={22} />
+            <X size={28} />
           </button>
         </div>
 
@@ -286,7 +288,7 @@ export default function OverlayMenu({ isOpen, onClose, toggleRef }: OverlayMenuP
             >
               <RollingText
                   ref={(el) => {
-                    rollingRefs.current[index] = el;
+                    socialRollingRefs.current[index] = el;
                   }}
                   text={social.label}
                   className={`${inter.className} uppercase tracking-tight`}

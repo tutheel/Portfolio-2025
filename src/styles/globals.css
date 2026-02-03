@@ -12,11 +12,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@media (min-width: 1024px) {
+  .hero-bg {
+    background: radial-gradient(ellipse 100% 180% at 50% 0%, #240051, #000000 60%);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #ededed;
   }
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 }
 
 body {
@@ -156,14 +169,14 @@ body {
 .gradient-text-scroll {
   background: linear-gradient(
     90deg,
-    #6600E3,
+    #7300ff,
     #440098,
-    #2B0061,
+    #40008e,
     #440098,
-    #6600E3,
+    #7300ff,
     #440098,
-    #2B0061,
-    #6600E3
+    #40008e,
+    #7300ff
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;

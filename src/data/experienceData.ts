@@ -2,6 +2,7 @@ export interface ExperienceItem {
   company: string;
   role: string;
   duration: string;
+  summary: string;
   points: string[];
   techStack: string;
 }
@@ -11,6 +12,7 @@ export const experiences: ExperienceItem[] = [
     company: "Accenture",
     role: "Software Engineer",
     duration: "Dec 2024 - Present",
+    summary: "Building serverless workflow orchestration for insurance document processing on AWS.",
     points: [
       "Engineered a scalable, serverless workflow orchestration system to asynchronously process insurance document operations (print, store, email, preview) triggered by dynamic Guidewire events.",
       "Developed resilient request handling with AJV-based JSON schema validation and error-handling logic, along with JSON transformation services to ensure accurate payloads for downstream API integrations.",
@@ -28,6 +30,7 @@ export const experiences: ExperienceItem[] = [
     company: "Accenture",
     role: "Associate Software Engineer",
     duration: "Dec 2022 - Nov 2024",
+    summary: "Developed a serverless rating service powering the insurance lifecycle on AWS.",
     points: [
       "Built a serverless rating service using AWS Lambda to support the Rate process in the insurance lifecycle (Rate, Quote, Issue).",
       "Created a workflow where the service communicates between two AWS accounts (standard and trusted) to pass policy details and fetch additional rating information.",

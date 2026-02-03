@@ -1,132 +1,203 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Inter } from "next/font/google";
+import gsap from "gsap";
 
-// Loader configuration and callback props
-// Flow overview:
-// 1) Wait optional start delay
-// 2) Begin ticking progress up to 95%
-// 3) When window fully loads, wait until minimum duration is satisfied
-// 4) Set progress to 100%
-// 5) Fade out the percentage text, then hide it (display: none)
-// 6) Fade out the overlay, then call onFinish()
+const inter = Inter({
+  weight: ["300", "400", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
+
 type LoaderProps = {
   onFinish?: () => void;
-  startDelayMs?: number;       // delay before progress starts
-  minDurationMs?: number;      // minimum time loader stays visible
-  tickIntervalMs?: number;     // how fast % increases before load
-  fallbackMs?: number;         // safety timeout to force-complete
-  textFadeMs?: number;         // fade duration for the 100% text
-  overlayFadeMs?: number;      // fade duration for overlay
 };
 
-function Loader({
-  onFinish,
-  startDelayMs = 20,
-  minDurationMs = 1200,
-  tickIntervalMs = 30,
-  fallbackMs = 5000,
-  textFadeMs = 1000,
-  overlayFadeMs = 1000,
-}: LoaderProps) {
-  // State
-  const [progress, setProgress] = useState(0);                  // current progress (0-100)
-  const [isTextFading, setIsTextFading] = useState(false);      // 5) animate opacity to 0
-  const [isTextHidden, setIsTextHidden] = useState(false);      // then hide the text node
-  const [isOverlayFading, setIsOverlayFading] = useState(false);// 6) fade out overlay
+const words = ["DESIGN", "BUILD", "EVOLVE"];
 
-  // Track when the progress actually started to enforce minDurationMs
-  const startTimeRef = React.useRef<number | null>(null);
+function Loader({ onFinish }: LoaderProps) {
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const wordRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const barFillRef = useRef<HTMLDivElement>(null);
+  const barTrackRef = useRef<HTMLDivElement>(null);
+  const curtainTopRef = useRef<HTMLDivElement>(null);
+  const curtainBottomRef = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
 
+  // Wait for window load
   useEffect(() => {
-    let done = false;
-    let tick: number | undefined;
-
-    // 1) optional start delay -> then begin ticking
-    const startDelay: number = window.setTimeout(() => {
-      startTimeRef.current = Date.now();
-      // 2) tick progress up to 95% (final jump to 100 happens after load/minDuration)
-      tick = window.setInterval(() => {
-        setProgress((prev) => (prev < 95 ? prev + 1 : prev));
-      }, tickIntervalMs);
-    }, startDelayMs);
-
-    // Complete on window load
-    const handleLoad = () => {
-      if (done) return;
-      const startedAt = startTimeRef.current ?? Date.now();
-      const elapsed = Date.now() - startedAt;
-      const waitMore = Math.max(0, minDurationMs - elapsed);
-
-      // 3) ensure minimum visible duration before finalizing
-      window.setTimeout(() => {
-        setProgress(100);            // 4) reach 100%
-        setIsTextFading(true);       // 5a) start text fade-out
-        window.setTimeout(() => {
-          setIsTextHidden(true);     // 5b) remove text from layout/ARIA
-          setIsOverlayFading(true);  // 6a) fade overlay
-          window.setTimeout(() => {
-            if (onFinish) onFinish(); // 6b) signal completion
-          }, overlayFadeMs);
-        }, textFadeMs);
-      }, waitMore);
-    };
-
     if (document.readyState === "complete") {
-      handleLoad();
+      setReady(true);
     } else {
-      window.addEventListener("load", handleLoad, { once: true });
+      const onLoad = () => setReady(true);
+      window.addEventListener("load", onLoad, { once: true });
+      return () => window.removeEventListener("load", onLoad);
     }
+  }, []);
 
-    // Hard timeout fallback (safety) — completes even if 'load' never fires
-    const fallback = window.setTimeout(() => {
-      if (done) return;
-      setProgress(100);
-      setIsTextFading(true);        // fade text
-      window.setTimeout(() => {
-        setIsTextHidden(true);      // hide text
-        setIsOverlayFading(true);   // fade overlay
-        window.setTimeout(() => {
-          if (onFinish) onFinish(); // finish
-        }, overlayFadeMs);
-      }, textFadeMs);
-    }, fallbackMs);
+  // Fallback safety timeout
+  useEffect(() => {
+    const fallback = window.setTimeout(() => setReady(true), 5000);
+    return () => window.clearTimeout(fallback);
+  }, []);
 
-    return () => {
-      done = true;
-      if (tick) window.clearInterval(tick);       // clear ticking
-      if (startDelay !== undefined) window.clearTimeout(startDelay); // clear start delay
-      window.clearTimeout(fallback);               // clear fallback
-      window.removeEventListener("load", handleLoad);
-    };
-  }, [onFinish, startDelayMs, minDurationMs, tickIntervalMs, fallbackMs, textFadeMs, overlayFadeMs]);
+  // GSAP animation sequence
+  useEffect(() => {
+    if (!overlayRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          if (onFinish) onFinish();
+        },
+      });
+
+      // Initial states — all letters off-screen below
+      wordRefs.current.forEach((el) => {
+        if (!el) return;
+        const chars = el.querySelectorAll<HTMLElement>("[data-char]");
+        chars.forEach((ch) => gsap.set(ch, { yPercent: 110, visibility: "visible" }));
+      });
+      gsap.set(barTrackRef.current, { opacity: 1 });
+      gsap.set(barFillRef.current, { width: "0%" });
+
+      // Bar fills alongside the word sequence
+      tl.to(barFillRef.current, {
+        width: ready ? "100%" : "55%",
+        duration: ready ? 2.8 : 2.8,
+        ease: "power1.inOut",
+      }, 0);
+
+      // Word cycle: letters roll in staggered, hold, then roll out staggered
+      let wordTime = 0.1;
+      words.forEach((_, i) => {
+        const el = wordRefs.current[i];
+        if (!el) return;
+        const chars = el.querySelectorAll<HTMLElement>("[data-char]");
+        if (!chars.length) return;
+
+        // Letters roll in from below
+        tl.to(chars, {
+          yPercent: 0,
+          duration: 0.45,
+          stagger: 0.04,
+          ease: "power3.out",
+        }, wordTime);
+
+        const rollInEnd = wordTime + 0.45 + 0.04 * (chars.length - 1);
+
+        // Hold
+        const holdEnd = rollInEnd + 0.3;
+
+        // Roll out upward (except last word)
+        if (i < words.length - 1) {
+          tl.to(chars, {
+            yPercent: -110,
+            duration: 0.35,
+            stagger: 0.03,
+            ease: "power3.in",
+          }, holdEnd);
+
+          const rollOutEnd = holdEnd + 0.35 + 0.03 * (chars.length - 1);
+          wordTime = rollOutEnd + 0.08;
+        }
+      });
+
+      // If page not loaded yet, pause and wait
+      if (!ready) {
+        tl.addPause();
+      }
+
+      // Complete the bar
+      tl.to(barFillRef.current, {
+        width: "100%",
+        duration: 0.5,
+        ease: "power2.inOut",
+      });
+
+      // Hold for a beat
+      tl.to({}, { duration: 0.3 });
+
+      // 1. Fade out the progress bar
+      tl.to(barTrackRef.current, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+
+      // 2. Fade out the last word's letters
+      const lastEl = wordRefs.current[words.length - 1];
+      const lastChars = lastEl ? lastEl.querySelectorAll<HTMLElement>("[data-char]") : [];
+      tl.to(Array.from(lastChars), {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+
+      // 3. Fade out the entire loader overlay
+      tl.to(overlayRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.inOut",
+      });
+    }, overlayRef);
+
+    return () => ctx.revert();
+  }, [ready, onFinish]);
+
+  // Resume paused timeline when page is ready
+  useEffect(() => {
+    if (ready) {
+      gsap.globalTimeline.resume();
+    }
+  }, [ready]);
 
   return (
-    <div
-      className="fixed inset-0 z-[9999] flex items-end-safe justify-center bg-[#000]"
-      style={{
-        opacity: isOverlayFading ? 0 : 1,                  // 6a) overlay fades when true
-        transition: `opacity ${overlayFadeMs}ms ease-out`,      // sync with overlayFadeMs
-      }}
-    >
-      <div className="w-[60%] h-20 max-w-[520px]">
-        <div className="h-[6px] w-full bg-[#000] rounded-full overflow-hidden">
-          <div
-            className="h-full bg-[#7300FF] transition-[width] duration-150 ease-out"
-            style={{ width: `${progress}%` }}
-          />
+    <div ref={overlayRef} className="fixed inset-0 z-[9999]">
+      {/* Split curtain backgrounds */}
+      <div
+        ref={curtainTopRef}
+        className="absolute top-0 left-0 right-0 h-1/2 bg-black"
+      />
+      <div
+        ref={curtainBottomRef}
+        className="absolute bottom-0 left-0 right-0 h-1/2 bg-black"
+      />
+
+      {/* Centered word display */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative h-[1.15em] overflow-hidden px-4 text-[4rem] md:text-[5.5rem] lg:text-[5.5rem] leading-none">
+          {words.map((word, i) => (
+            <div
+              key={word}
+              ref={(el) => { wordRefs.current[i] = el; }}
+              className={`${i === 0 ? "" : "absolute inset-0"} flex items-center justify-center`}
+            >
+              <span className={`${inter.className} inline-flex font-bold tracking-tighter`}>
+                {word.split("").map((char, j) => (
+                  <span key={j} className="inline-block overflow-hidden">
+                    <span
+                      data-char
+                      className="inline-block text-white invisible will-change-transform"
+                    >
+                      {char}
+                    </span>
+                  </span>
+                ))}
+              </span>
+            </div>
+          ))}
         </div>
-        {/* Percentage text: fades first, then gets hidden */}
-        {!isTextHidden && (
-          <div
-            className="text-center text-white text-2xl lg:text-lg mt-3"
-            style={{
-              opacity: isTextFading ? 0 : 1,            // 5a) opacity animated
-              transition: `opacity ${textFadeMs}ms ease`,// sync with textFadeMs
-            }}
-          >
-            {progress}%
-          </div>
-        )}
+      </div>
+
+      {/* Progress bar at the bottom */}
+      <div
+        ref={barTrackRef}
+        className="absolute bottom-0 left-0 right-0 z-10 h-[3px] bg-[#1a1a1a]"
+      >
+        <div
+          ref={barFillRef}
+          className="h-full w-0 bg-gradient-to-r from-[#7300FF] to-[#5900ff]"
+        />
       </div>
     </div>
   );
