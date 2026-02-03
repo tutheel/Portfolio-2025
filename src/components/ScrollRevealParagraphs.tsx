@@ -23,8 +23,8 @@ export default function ScrollRevealParagraphs({
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray<HTMLElement>("[data-paragraph]");
-      gsap.set(items, { yPercent: 30, opacity: 0 });
+      const words = gsap.utils.toArray<HTMLElement>("[data-word]");
+      gsap.set(words, { y: 12, opacity: 0 });
 
       gsap.timeline({
         scrollTrigger: {
@@ -32,12 +32,12 @@ export default function ScrollRevealParagraphs({
           start: "top 60%",
           toggleActions: "play none none reverse",
         },
-      }).to(items, {
-        yPercent: 0,
+      }).to(words, {
+        y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.5,
         ease: "power3.out",
-        stagger: 0.15,
+        stagger: 0.03,
       });
     }, rootRef);
 
@@ -46,14 +46,22 @@ export default function ScrollRevealParagraphs({
 
   return (
     <div ref={rootRef} className={className}>
-      <div className={`ml-auto flex w-full max-w-3xl flex-col items-end ${gapClasses}`}>
+      <div className={`ml-auto flex w-full max-full flex-col items-start ${gapClasses}`}>
         {paragraphs.map((text, index) => (
           <p
             key={`paragraph-${index}`}
-            data-paragraph
             className={`w-full max-w-xl text-left ${paragraphClassName}`}
           >
-            {text}
+            {text.split(" ").map((word, i) => (
+              <span
+                key={`word-${index}-${i}`}
+                data-word
+                className="inline-block"
+                style={{ marginRight: "0.25em" }}
+              >
+                {word}
+              </span>
+            ))}
           </p>
         ))}
       </div>

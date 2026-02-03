@@ -18,6 +18,15 @@ const config: Config = {
         brand: "#fff200",
         // Add more or rename as you like
       },
+      animation: {
+        "gradient-scroll": "gradient-scroll 6s linear infinite",
+      },
+      keyframes: {
+        "gradient-scroll": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
+        },
+      },
     },
   },
   plugins: [

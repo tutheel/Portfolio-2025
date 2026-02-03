@@ -143,6 +143,36 @@ body {
     0 -0.5px 0 rgba(106, 0, 255, 0.15);
 }
 
+/* ---------- Moving gradient text ---------- */
+@keyframes gradient-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: -200% 50%;
+  }
+}
+
+.gradient-text-scroll {
+  background: linear-gradient(
+    90deg,
+    #6600E3,
+    #440098,
+    #2B0061,
+    #440098,
+    #6600E3,
+    #440098,
+    #2B0061,
+    #6600E3
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-scroll 6s linear infinite;
+}
+
 /* ---------- Optional: Color Dodge blend for extra glow ---------- */
 .blend-color-dodge { mix-blend-mode: color-dodge; }
 .blend-isolate     { isolation: isolate; } /* keep blending local */

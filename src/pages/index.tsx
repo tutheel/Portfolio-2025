@@ -5,7 +5,6 @@ import Content from "@/pages/Content";
 import Loader from "@/sections/Loader";
 
 
-
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
