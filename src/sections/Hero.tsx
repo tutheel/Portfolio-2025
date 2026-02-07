@@ -72,45 +72,45 @@ function Hero() {
       // Step 1: Fade out the black overlay to reveal the purple gradient
       tl.to(overlayRef.current, {
         opacity: 0,
-        duration: 1.4,
+        duration: 0.8,
         ease: "power3.inOut",
-        delay: 0.3,
+        delay: 0.15,
       })
         // Step 2: "Hello I'm"
         .to(
           helloRef.current,
-          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-          "-=0.5"
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.3"
         )
         // Step 3: "Sushil Patil"
         .to(
           nameRef.current,
-          { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" },
-          "-=0.35"
+          { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+          "-=0.2"
         )
         // Step 4: "Developer & Designer"
         .to(
           roleRef.current,
-          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.35"
+          { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+          "-=0.2"
         )
         // Step 5: "From Karnataka, India"
         .to(
           locationRef.current,
-          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          "-=0.3"
+          { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+          "-=0.15"
         )
         // Step 6: Footer (date + chevron + resume)
         .to(
           footerRef.current,
-          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.25"
+          { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" },
+          "-=0.15"
         )
         // Step 7: Design orbs fade in last
         .to(
           orbsRef.current,
-          { opacity: 1, duration: 1.2, ease: "power2.inOut" },
-          "-=0.4"
+          { opacity: 1, duration: 0.7, ease: "power2.inOut" },
+          "-=0.25"
         );
     }, sectionRef);
 
@@ -185,7 +185,7 @@ function Hero() {
         className="relative w-full h-1/12 lg:h-1/12 flex flex-row justify-between items-center text-sm text-center z-100"
       >
         <div className="pl-5 text-white lg:mt-0 font-light normal-case lg:font-medium transition-colors duration-400 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_2px_20px_#4C00D8]">
-          {day}-{month} {year}
+          {day} {month} {year}
         </div>
         <div className="pr-6 lg:pr-8 lg:mt-0 text-xs text-white flex items-center justify-center cursor-default hover:tracking-widest transform duration-200 ease-in-out">
           <ChevronDown className="w-5 h-5" />

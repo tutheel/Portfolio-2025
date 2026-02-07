@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/next";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <CustomCursor />
       <Component {...pageProps} />
       <Analytics />
     </>

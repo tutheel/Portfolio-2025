@@ -23,7 +23,7 @@ function Projects() {
     <section className="w-full min-h-max bg-radial-[at_50%_0%] from-[#240051] from-0%  to-[#000000] to-75% flex flex-col items-center justify-center">
       {/* heading */}
       <h1
-        className={`w-full h-4/10 ${inter.className} font-bold text-transparent bg-radial-[at_50%_0%] from-[#7300FF] from-10% via-[#2F0069] via-70% to-[#110130] to-95% bg-clip-text text-[6.2rem] lg:text-[14.6rem] leading-[0.85] lg:leading-none tracking-tighter text-center py-30 lg:py-15`}
+        className={`w-full h-4/10 ${inter.className} font-bold text-transparent bg-clip-text text-[6.2rem] lg:text-[14.6rem] leading-[0.85] lg:leading-none tracking-tighter text-center py-30 lg:py-15 gradient-tittle-text-scroll`}
       >
         Selected Work
       </h1>

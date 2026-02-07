@@ -36,7 +36,7 @@ function Loader({ onFinish }: LoaderProps) {
 
   // Fallback safety timeout
   useEffect(() => {
-    const fallback = window.setTimeout(() => setReady(true), 5000);
+    const fallback = window.setTimeout(() => setReady(true), 3000);
     return () => window.clearTimeout(fallback);
   }, []);
 
@@ -63,7 +63,7 @@ function Loader({ onFinish }: LoaderProps) {
       // Bar fills alongside the word sequence
       tl.to(barFillRef.current, {
         width: ready ? "100%" : "55%",
-        duration: ready ? 2.8 : 2.8,
+        duration: ready ? 1.6 : 1.6,
         ease: "power1.inOut",
       }, 0);
 
@@ -78,27 +78,27 @@ function Loader({ onFinish }: LoaderProps) {
         // Letters roll in from below
         tl.to(chars, {
           yPercent: 0,
-          duration: 0.45,
-          stagger: 0.04,
+          duration: 0.25,
+          stagger: 0.025,
           ease: "power3.out",
         }, wordTime);
 
-        const rollInEnd = wordTime + 0.45 + 0.04 * (chars.length - 1);
+        const rollInEnd = wordTime + 0.25 + 0.025 * (chars.length - 1);
 
         // Hold
-        const holdEnd = rollInEnd + 0.3;
+        const holdEnd = rollInEnd + 0.15;
 
         // Roll out upward (except last word)
         if (i < words.length - 1) {
           tl.to(chars, {
             yPercent: -110,
-            duration: 0.35,
-            stagger: 0.03,
+            duration: 0.2,
+            stagger: 0.02,
             ease: "power3.in",
           }, holdEnd);
 
-          const rollOutEnd = holdEnd + 0.35 + 0.03 * (chars.length - 1);
-          wordTime = rollOutEnd + 0.08;
+          const rollOutEnd = holdEnd + 0.2 + 0.02 * (chars.length - 1);
+          wordTime = rollOutEnd + 0.05;
         }
       });
 
@@ -110,17 +110,17 @@ function Loader({ onFinish }: LoaderProps) {
       // Complete the bar
       tl.to(barFillRef.current, {
         width: "100%",
-        duration: 0.5,
+        duration: 0.3,
         ease: "power2.inOut",
       });
 
       // Hold for a beat
-      tl.to({}, { duration: 0.3 });
+      tl.to({}, { duration: 0.15 });
 
       // 1. Fade out the progress bar
       tl.to(barTrackRef.current, {
         opacity: 0,
-        duration: 0.3,
+        duration: 0.2,
         ease: "power2.in",
       });
 
@@ -129,14 +129,14 @@ function Loader({ onFinish }: LoaderProps) {
       const lastChars = lastEl ? lastEl.querySelectorAll<HTMLElement>("[data-char]") : [];
       tl.to(Array.from(lastChars), {
         opacity: 0,
-        duration: 0.3,
+        duration: 0.2,
         ease: "power2.in",
       });
 
       // 3. Fade out the entire loader overlay
       tl.to(overlayRef.current, {
         opacity: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power2.inOut",
       });
     }, overlayRef);
