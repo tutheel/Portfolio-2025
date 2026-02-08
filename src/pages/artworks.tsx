@@ -70,7 +70,7 @@ export default function Artworks() {
       />
 
       <Navbar />
-      <main className="min-h-screen w-full bg-black">
+      <main className="min-h-screen w-full bg-linear-to-b from-[#1f0045] from-0% to-[#0a001e] to-15%">
 
         {/* Hero heading */}
         <div className="flex flex-col items-center justify-center pt-20 pb-10 lg:pt-30 lg:pb-16 px-10">
