@@ -193,7 +193,7 @@ function Hero() {
         <div className="text-white lg:mt-0 font-light capitalize lg:font-medium">
           <a
             className="transition-colors pr-5 duration-500 ease-out hover:text-[#7327ff] hover:drop-shadow-[0_0px_5px_#7327ff]"
-            href="/Sushils%20Resume.pdf"
+            href="/SushilsResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
