@@ -55,7 +55,7 @@ export default function About() {
           className="px-4 md:px-16 "
           paragraphs={[
             "Every product has potential. My work helps it shine.",
-            "By blending design sensitivity with technical depth, I create interfaces and systems that feel smooth, modern, and genuinely helpful for the people who use them.",
+            "By blending design sensitivity with technical depth, I create interfaces and systems that feel smooth, modern and genuinely helpful for the people who use them.",
             "I approach every project with a blend of design clarity and engineering precision ensuring the experience looks exceptional and performs flawlessly.",
           ]}
           paragraphClassName="text-lg lg:text-xl font-light tracking-tight leading-7 lg:leading-8"
